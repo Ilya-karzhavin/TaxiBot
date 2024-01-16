@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+  redis:
+      image: redis
+      command: "redis-server --requirepass foobared"
+      restart: always
+      volumes:
+        - ./redis:/data
+      ports:
+        - "6379:6379"
+      networks:
+        - backend
+
+  
+      
+
+networks:
+  backend:
+    driver: bridge
+
