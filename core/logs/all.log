@@ -5664,3 +5664,7 @@ WARNING [2024-04-10 10:06:09,455] log 15 140151754319616 Bad Request: /api/users
 WARNING [2024-04-10 10:06:09,467] basehttp 15 140151754319616 "POST /api/users/registerDriver/ HTTP/1.1" 400 126
 INFO [2024-04-10 10:07:44,736] autoreload 15 140152040515392 /app/core/cabinet/models.py changed, reloading.
 INFO [2024-04-10 10:07:50,546] autoreload 22 140185558185792 Watching for file changes with StatReloader
+INFO [2024-04-10 10:35:05,880] autoreload 15 140150425675584 Watching for file changes with StatReloader
+WARNING [2024-04-10 10:35:18,921] log 15 140150138464000 Not Found: /
+WARNING [2024-04-10 10:35:18,923] basehttp 15 140150138464000 "GET / HTTP/1.1" 404 2407
+INFO [2024-04-10 10:40:58,987] autoreload 16 140109408491328 Watching for file changes with StatReloader

@@ -31404,3 +31404,548 @@ AttributeError: 'NoneType' object has no attribute 'message_1'
 [2024-04-10 10:08:52,315: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
 [2024-04-10 10:08:52,346: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
 [2024-04-10 10:08:52,348: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:34:41,525: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 10:34:41,558: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 10:34:42,622: INFO/MainProcess] mingle: all alone
+[2024-04-10 10:34:42,649: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 10:34:42,652: INFO/MainProcess] celery@fc7b3f6b0ec9 ready.
+[2024-04-10 10:34:44,059: INFO/Beat] beat: Starting...
+[2024-04-10 10:34:44,498: INFO/Beat] DatabaseScheduler: Schedule changed.
+[2024-04-10 10:34:44,635: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:34:44,679: INFO/MainProcess] Received task: referral.tasks.remind_notify[1f3cec2c-a724-4434-9ce9-f77e5f944820]  
+[2024-04-10 10:34:44,739: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:34:44,742: INFO/MainProcess] Received task: referral.tasks.check_mailings[ef85c3e4-7cf5-4a65-b5c6-495caa4465b1]  
+[2024-04-10 10:34:44,764: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:34:44,776: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[fff4f814-78b3-4c69-a36a-f533b50ecaff]  
+[2024-04-10 10:34:44,798: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:34:44,839: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[1f3cec2c-a724-4434-9ce9-f77e5f944820] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:34:44,865: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:34:44,888: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[ef85c3e4-7cf5-4a65-b5c6-495caa4465b1] succeeded in 0.023426413999914075s: None
+[2024-04-10 10:34:45,075: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:34:45,097: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:34:45,098: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:34:45,099: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[fff4f814-78b3-4c69-a36a-f533b50ecaff] succeeded in 0.201138861999425s: None
+[2024-04-10 10:35:00,031: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:35:00,046: INFO/MainProcess] Received task: referral.tasks.remind_notify[813cf743-c945-4438-99f3-264e83c4adc9]  
+[2024-04-10 10:35:00,103: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:35:00,144: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[813cf743-c945-4438-99f3-264e83c4adc9] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:35:14,790: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:35:14,796: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[b9583578-3a73-4d35-ac23-9785240c6d49]  
+[2024-04-10 10:35:14,901: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:35:14,917: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:35:14,918: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:35:14,920: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[b9583578-3a73-4d35-ac23-9785240c6d49] succeeded in 0.11648467700069887s: None
+[2024-04-10 10:35:34,768: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:35:34,774: INFO/MainProcess] Received task: referral.tasks.check_mailings[9520506e-3b98-4ba6-8801-26ef98ebb7e2]  
+[2024-04-10 10:35:34,783: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:35:34,820: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[9520506e-3b98-4ba6-8801-26ef98ebb7e2] succeeded in 0.03672899800039886s: None
+[2024-04-10 10:35:44,793: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:35:44,803: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[dd4c4457-d3b4-4795-a6d7-071334067126]  
+[2024-04-10 10:35:44,874: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:35:44,881: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:35:44,882: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:35:44,883: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[dd4c4457-d3b4-4795-a6d7-071334067126] succeeded in 0.0782428569982585s: None
+[2024-04-10 10:36:00,014: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:36:00,028: INFO/MainProcess] Received task: referral.tasks.remind_notify[cc3ab5f0-9b13-4b1d-adf9-680606c94a41]  
+[2024-04-10 10:36:00,050: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:36:00,055: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[cc3ab5f0-9b13-4b1d-adf9-680606c94a41] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:36:14,798: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:36:14,812: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[af5acaad-1f5c-422e-bbb8-f2c3bbfd3fd9]  
+[2024-04-10 10:36:14,873: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:36:14,907: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:36:14,910: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:36:14,912: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[af5acaad-1f5c-422e-bbb8-f2c3bbfd3fd9] succeeded in 0.09538037900165364s: None
+[2024-04-10 10:36:24,779: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:36:24,800: INFO/MainProcess] Received task: referral.tasks.check_mailings[236ba9a7-0fc7-4543-90cb-1de216c6a4bf]  
+[2024-04-10 10:36:24,805: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:36:24,824: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[236ba9a7-0fc7-4543-90cb-1de216c6a4bf] succeeded in 0.01937744700080657s: None
+[2024-04-10 10:36:44,806: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:36:44,818: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[93659f0b-cbe1-43b8-b84f-0341deeb7c0b]  
+[2024-04-10 10:36:44,926: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:36:44,935: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:36:44,941: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:36:44,942: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[93659f0b-cbe1-43b8-b84f-0341deeb7c0b] succeeded in 0.10761148799974762s: None
+[2024-04-10 10:37:00,010: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:37:00,017: INFO/MainProcess] Received task: referral.tasks.remind_notify[2e33c10d-6d20-450f-b953-3c9873d53ca7]  
+[2024-04-10 10:37:00,051: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:37:00,065: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[2e33c10d-6d20-450f-b953-3c9873d53ca7] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:37:14,784: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:37:14,786: INFO/MainProcess] Received task: referral.tasks.check_mailings[e19c004e-1ad7-4333-a8cd-49374bc1f474]  
+[2024-04-10 10:37:14,788: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:37:14,803: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[e19c004e-1ad7-4333-a8cd-49374bc1f474] succeeded in 0.015453586998773972s: None
+[2024-04-10 10:37:14,821: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:37:14,824: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[2d3cfef4-2869-4e3a-bb4c-54bef8431237]  
+[2024-04-10 10:37:14,913: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:37:14,927: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:37:14,949: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:37:14,962: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[2d3cfef4-2869-4e3a-bb4c-54bef8431237] succeeded in 0.13352294099968276s: None
+[2024-04-10 10:37:45,771: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:37:45,803: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[b68075c6-ea5e-4bf7-92bd-be4ad0a1cf02]  
+[2024-04-10 10:37:45,861: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:37:45,892: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:37:45,904: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:37:45,909: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[b68075c6-ea5e-4bf7-92bd-be4ad0a1cf02] succeeded in 0.09771077200093714s: None
+[2024-04-10 10:38:00,013: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:38:00,026: INFO/MainProcess] Received task: referral.tasks.remind_notify[3d788c49-9cd8-4e8a-98a6-3c30094f5b5d]  
+[2024-04-10 10:38:00,074: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:38:00,115: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[3d788c49-9cd8-4e8a-98a6-3c30094f5b5d] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:38:04,793: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:38:04,978: INFO/MainProcess] Received task: referral.tasks.check_mailings[67ad30b7-d1b2-4f6e-9f15-4baba735bd07]  
+[2024-04-10 10:38:06,205: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:38:06,307: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[67ad30b7-d1b2-4f6e-9f15-4baba735bd07] succeeded in 0.10189300300044124s: None
+[2024-04-10 10:38:15,995: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:38:16,112: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[e5e964a7-6898-47f9-9b5d-454a17a466ac]  
+[2024-04-10 10:38:16,257: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:38:16,298: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:38:16,323: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:38:16,371: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[e5e964a7-6898-47f9-9b5d-454a17a466ac] succeeded in 0.23762942099892825s: None
+[2024-04-10 10:38:45,996: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:38:46,085: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[3836fd49-2ba2-400e-9b05-c937d052ed03]  
+[2024-04-10 10:38:46,213: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:38:46,234: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:38:46,246: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:38:46,247: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[3836fd49-2ba2-400e-9b05-c937d052ed03] succeeded in 0.15891666200150212s: None
+[2024-04-10 10:38:54,821: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:38:54,829: INFO/MainProcess] Received task: referral.tasks.check_mailings[06a3e180-a884-4e52-8aa4-7f178964b345]  
+[2024-04-10 10:38:54,837: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:38:54,861: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[06a3e180-a884-4e52-8aa4-7f178964b345] succeeded in 0.024003808000998106s: None
+[2024-04-10 10:39:00,004: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:39:02,083: INFO/MainProcess] Received task: referral.tasks.remind_notify[36fa2264-77ae-4deb-a86d-6fb30ff5c91d]  
+[2024-04-10 10:39:02,133: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:39:02,162: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[36fa2264-77ae-4deb-a86d-6fb30ff5c91d] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:39:16,046: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:39:16,088: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[4e2ad0f9-1af8-4525-a800-82dd3c2873e4]  
+[2024-04-10 10:39:16,208: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:39:16,240: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:39:16,249: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:39:16,250: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[4e2ad0f9-1af8-4525-a800-82dd3c2873e4] succeeded in 0.15968730200074788s: None
+[2024-04-10 10:39:44,829: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:39:44,834: INFO/MainProcess] Received task: referral.tasks.check_mailings[e5547bdd-f3e3-489f-b6d1-aace1cbdf821]  
+[2024-04-10 10:39:44,835: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:39:44,867: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[e5547bdd-f3e3-489f-b6d1-aace1cbdf821] succeeded in 0.03181819900055416s: None
+[2024-04-10 10:39:46,060: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:39:46,063: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[1aadea60-98ea-48cd-bb3e-058f41681949]  
+[2024-04-10 10:39:46,130: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:39:46,141: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:39:46,149: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:39:46,152: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[1aadea60-98ea-48cd-bb3e-058f41681949] succeeded in 0.08667517200046859s: None
+[2024-04-10 10:40:00,010: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:40:00,025: INFO/MainProcess] Received task: referral.tasks.remind_notify[cc1c4067-d414-4469-9a60-6985f8e21442]  
+[2024-04-10 10:40:00,088: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:40:00,116: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[cc1c4067-d414-4469-9a60-6985f8e21442] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:40:16,073: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:40:16,079: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[9a93b458-7888-4c2e-ac09-82dbbf8a0bcb]  
+[2024-04-10 10:40:16,143: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:40:16,154: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:40:16,159: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:40:16,164: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[9a93b458-7888-4c2e-ac09-82dbbf8a0bcb] succeeded in 0.07527596399995673s: None
+[2024-04-10 10:40:39,064: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 10:40:39,092: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 10:40:40,117: INFO/MainProcess] mingle: all alone
+[2024-04-10 10:40:40,230: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 10:40:40,237: INFO/MainProcess] celery@3dd6685b7302 ready.
+[2024-04-10 10:40:41,726: INFO/Beat] beat: Starting...
+[2024-04-10 10:40:42,085: INFO/Beat] DatabaseScheduler: Schedule changed.
+[2024-04-10 10:40:42,279: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:40:42,324: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[74b1b869-3e8b-4e2d-a07e-07a450be3dc9]  
+[2024-04-10 10:40:42,449: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:40:42,459: INFO/MainProcess] Received task: referral.tasks.remind_notify[d37e43e6-6e3c-4dcc-94f8-60654ae29b92]  
+[2024-04-10 10:40:42,479: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:40:42,492: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:40:42,513: INFO/MainProcess] Received task: referral.tasks.check_mailings[ada20afc-bea0-4c4d-aaa8-793ee533d7b7]  
+[2024-04-10 10:40:42,531: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:40:42,535: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:40:42,540: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[74b1b869-3e8b-4e2d-a07e-07a450be3dc9] succeeded in 0.19801398599884124s: None
+[2024-04-10 10:40:42,582: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:40:42,603: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[d37e43e6-6e3c-4dcc-94f8-60654ae29b92] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:40:42,612: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:40:42,660: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[ada20afc-bea0-4c4d-aaa8-793ee533d7b7] succeeded in 0.048280221000823076s: None
+[2024-04-10 10:41:00,023: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:41:00,028: INFO/MainProcess] Received task: referral.tasks.remind_notify[267963be-7eb5-4f9f-958f-3d60cd53fafd]  
+[2024-04-10 10:41:00,075: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:41:00,101: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[267963be-7eb5-4f9f-958f-3d60cd53fafd] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:41:12,265: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:41:12,294: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[768c9576-5a17-4f09-967e-4b780ebe74ba]  
+[2024-04-10 10:41:12,386: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:41:12,407: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:41:12,409: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:41:12,419: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[768c9576-5a17-4f09-967e-4b780ebe74ba] succeeded in 0.10344184399946244s: None
+[2024-04-10 10:41:32,509: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:41:32,529: INFO/MainProcess] Received task: referral.tasks.check_mailings[06f2e2c9-f244-4ef5-878b-ed3c2eacc7c1]  
+[2024-04-10 10:41:32,548: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:41:32,572: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[06f2e2c9-f244-4ef5-878b-ed3c2eacc7c1] succeeded in 0.024347483000383363s: None
+[2024-04-10 10:41:42,290: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:41:42,294: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[60572658-09b9-4107-b2fe-d10a52664af5]  
+[2024-04-10 10:41:42,364: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:41:42,383: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:41:42,384: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:41:42,385: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[60572658-09b9-4107-b2fe-d10a52664af5] succeeded in 0.08960944599857612s: None
+[2024-04-10 10:42:00,013: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:42:00,023: INFO/MainProcess] Received task: referral.tasks.remind_notify[9f6eee80-fa6f-435a-abcd-a78bfac0818c]  
+[2024-04-10 10:42:00,050: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:42:00,076: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[9f6eee80-fa6f-435a-abcd-a78bfac0818c] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:42:12,294: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:42:12,300: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[3a536101-8bda-4351-94c4-2446c0822412]  
+[2024-04-10 10:42:12,334: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:42:12,343: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:42:12,344: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:42:12,345: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[3a536101-8bda-4351-94c4-2446c0822412] succeeded in 0.04262318099972617s: None
+[2024-04-10 10:42:22,511: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:42:22,616: INFO/MainProcess] Received task: referral.tasks.check_mailings[3ccbef58-2681-45bd-a6e6-1c5e1e6f1e3d]  
+[2024-04-10 10:42:22,640: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:42:22,652: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[3ccbef58-2681-45bd-a6e6-1c5e1e6f1e3d] succeeded in 0.012317906999669503s: None
+[2024-04-10 10:42:42,306: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:42:42,319: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[dec0471a-616b-46d6-b65c-da684aefcb98]  
+[2024-04-10 10:42:42,423: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:42:42,441: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:42:42,442: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:42:42,443: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[dec0471a-616b-46d6-b65c-da684aefcb98] succeeded in 0.12085361999925226s: None
+[2024-04-10 10:43:00,014: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:43:00,062: INFO/MainProcess] Received task: referral.tasks.remind_notify[b36362dc-718d-4395-a814-3b3f1f4ced48]  
+[2024-04-10 10:43:00,143: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:43:00,192: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[b36362dc-718d-4395-a814-3b3f1f4ced48] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:43:12,345: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:43:12,350: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[176e823e-1123-4b05-8686-664782ed394a]  
+[2024-04-10 10:43:12,551: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:43:12,558: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:43:12,570: INFO/MainProcess] Received task: referral.tasks.check_mailings[7c31b05e-7197-4325-8069-1d1cbd356f22]  
+[2024-04-10 10:43:12,586: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:43:12,598: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:43:12,625: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[176e823e-1123-4b05-8686-664782ed394a] succeeded in 0.2134155309995549s: None
+[2024-04-10 10:43:12,629: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:43:12,673: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[7c31b05e-7197-4325-8069-1d1cbd356f22] succeeded in 0.043930907999310875s: None
+[2024-04-10 10:43:42,364: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:43:42,576: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[54ca94e8-6e7e-4a3e-8955-3893174e8361]  
+[2024-04-10 10:43:42,765: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:43:42,814: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:43:42,863: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:43:42,892: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[54ca94e8-6e7e-4a3e-8955-3893174e8361] succeeded in 0.22825153499979933s: None
+[2024-04-10 10:44:00,021: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:44:00,100: INFO/MainProcess] Received task: referral.tasks.remind_notify[b897dda8-fdb6-4b3e-a02f-95c088b6aad2]  
+[2024-04-10 10:44:00,160: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:44:00,173: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[b897dda8-fdb6-4b3e-a02f-95c088b6aad2] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:44:02,569: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:44:02,587: INFO/MainProcess] Received task: referral.tasks.check_mailings[5573541b-f21a-4030-bfd6-98f62e4ecff0]  
+[2024-04-10 10:44:02,614: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:44:02,684: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[5573541b-f21a-4030-bfd6-98f62e4ecff0] succeeded in 0.07012622399997781s: None
+[2024-04-10 10:44:12,369: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:44:12,372: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[8aea1acc-691a-46ba-aadc-9317368b22b0]  
+[2024-04-10 10:44:12,411: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:44:12,538: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:44:12,539: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:44:12,539: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[8aea1acc-691a-46ba-aadc-9317368b22b0] succeeded in 0.16557241400005296s: None
+[2024-04-10 10:44:42,382: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:44:42,391: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[5a9867cb-60ed-4b28-a292-4b5fe983e4e2]  
+[2024-04-10 10:44:42,473: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:44:42,492: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:44:42,493: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:44:42,498: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[5a9867cb-60ed-4b28-a292-4b5fe983e4e2] succeeded in 0.10218981199977861s: None
+[2024-04-10 10:44:52,582: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:44:52,594: INFO/MainProcess] Received task: referral.tasks.check_mailings[6ab2036b-1103-427b-88c9-04aee0085b1e]  
+[2024-04-10 10:44:52,597: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:44:52,622: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[6ab2036b-1103-427b-88c9-04aee0085b1e] succeeded in 0.02483798000139359s: None
+[2024-04-10 10:45:00,032: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:45:00,048: INFO/MainProcess] Received task: referral.tasks.remind_notify[8bd74cad-686e-4caf-8240-1e2cd8820641]  
+[2024-04-10 10:45:00,071: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:45:00,092: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[8bd74cad-686e-4caf-8240-1e2cd8820641] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:45:12,394: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:45:12,407: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[fb98d983-c457-4bc7-a676-7cce77dde00e]  
+[2024-04-10 10:45:12,481: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:45:12,510: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:45:12,512: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:45:12,514: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[fb98d983-c457-4bc7-a676-7cce77dde00e] succeeded in 0.09183501599909505s: None
+[2024-04-10 10:45:42,395: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:45:42,487: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[3af2c637-971c-4020-bba3-7b03e74f4e44]  
+[2024-04-10 10:45:42,601: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:45:42,646: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:45:42,672: INFO/MainProcess] Received task: referral.tasks.check_mailings[f9803aea-2755-44de-9b12-57508614896d]  
+[2024-04-10 10:45:42,712: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:45:42,741: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:45:42,742: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[3af2c637-971c-4020-bba3-7b03e74f4e44] succeeded in 0.18738278499949956s: None
+[2024-04-10 10:45:42,744: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:45:42,767: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[f9803aea-2755-44de-9b12-57508614896d] succeeded in 0.022353446000124677s: None
+[2024-04-10 10:46:00,020: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:46:00,034: INFO/MainProcess] Received task: referral.tasks.remind_notify[741d708d-8148-4bc0-9047-54157c072ff6]  
+[2024-04-10 10:46:00,087: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:46:00,101: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[741d708d-8148-4bc0-9047-54157c072ff6] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:46:12,415: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:46:12,438: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[00942bd9-a7cd-44b0-801d-ba194bca93de]  
+[2024-04-10 10:46:12,520: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:46:12,541: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:46:12,547: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:46:12,561: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[00942bd9-a7cd-44b0-801d-ba194bca93de] succeeded in 0.1075931599989417s: None
+[2024-04-10 10:46:32,610: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:46:32,620: INFO/MainProcess] Received task: referral.tasks.check_mailings[f298efd0-c9e6-4864-b807-977ffed7baf5]  
+[2024-04-10 10:46:32,640: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:46:32,659: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[f298efd0-c9e6-4864-b807-977ffed7baf5] succeeded in 0.019201308999981848s: None
+[2024-04-10 10:46:42,431: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:46:42,448: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[64e90162-8e61-4e18-bbfb-aa3be91e3bb1]  
+[2024-04-10 10:46:42,511: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:46:42,533: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:46:42,535: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:46:42,539: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[64e90162-8e61-4e18-bbfb-aa3be91e3bb1] succeeded in 0.08526194000114629s: None
+[2024-04-10 10:47:00,010: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:47:00,013: INFO/MainProcess] Received task: referral.tasks.remind_notify[1887d620-5ce4-487e-baa3-4038ccaec1fe]  
+[2024-04-10 10:47:00,053: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:47:00,071: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[1887d620-5ce4-487e-baa3-4038ccaec1fe] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:47:12,444: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:47:12,465: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[fd6eab86-1057-4bb5-929c-19cacf88655b]  
+[2024-04-10 10:47:12,624: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:47:12,641: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:47:12,641: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:47:12,642: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[fd6eab86-1057-4bb5-929c-19cacf88655b] succeeded in 0.12700833900089492s: None
+[2024-04-10 10:47:22,614: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:47:22,620: INFO/MainProcess] Received task: referral.tasks.check_mailings[b6beaaac-041a-49ed-903d-c68ed6117846]  
+[2024-04-10 10:47:22,630: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:47:22,668: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[b6beaaac-041a-49ed-903d-c68ed6117846] succeeded in 0.038130328999613994s: None
+[2024-04-10 10:47:42,449: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:47:42,452: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[41f615e5-9083-4520-ba89-5e3bc4c81393]  
+[2024-04-10 10:47:42,490: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:47:42,556: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:47:42,590: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:47:42,593: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[41f615e5-9083-4520-ba89-5e3bc4c81393] succeeded in 0.13646586399954685s: None
+[2024-04-10 10:48:00,005: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:48:00,024: INFO/MainProcess] Received task: referral.tasks.remind_notify[7f45ca54-4a87-4a84-8f46-b111d76b8568]  
+[2024-04-10 10:48:00,082: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:48:00,089: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[7f45ca54-4a87-4a84-8f46-b111d76b8568] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:48:12,461: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:48:12,464: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[46dbb968-c3fa-4a36-923f-4a05f59809c5]  
+[2024-04-10 10:48:12,502: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:48:12,513: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:48:12,514: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:48:12,515: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[46dbb968-c3fa-4a36-923f-4a05f59809c5] succeeded in 0.048426833000121405s: None
+[2024-04-10 10:48:12,616: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:48:12,618: INFO/MainProcess] Received task: referral.tasks.check_mailings[1096c32b-bb2f-4e2d-b22f-ff4bbfbef852]  
+[2024-04-10 10:48:12,620: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:48:12,648: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[1096c32b-bb2f-4e2d-b22f-ff4bbfbef852] succeeded in 0.028627882998989662s: None
+[2024-04-10 10:48:42,468: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:48:42,535: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[ee6171fe-cdbe-402c-b9f4-5f56fd9489f2]  
+[2024-04-10 10:48:42,647: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:48:42,666: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:48:42,672: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:48:42,680: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[ee6171fe-cdbe-402c-b9f4-5f56fd9489f2] succeeded in 0.12978649400065478s: None
+[2024-04-10 10:49:00,019: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:49:00,024: INFO/MainProcess] Received task: referral.tasks.remind_notify[27bd53a0-5ebf-4d18-b62b-0843ddb28e95]  
+[2024-04-10 10:49:00,064: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:49:00,090: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[27bd53a0-5ebf-4d18-b62b-0843ddb28e95] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:49:02,637: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:49:02,652: INFO/MainProcess] Received task: referral.tasks.check_mailings[280ff70e-8566-4080-8a94-6ab0584baca7]  
+[2024-04-10 10:49:02,665: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:49:02,702: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[280ff70e-8566-4080-8a94-6ab0584baca7] succeeded in 0.0372396540005866s: None
+[2024-04-10 10:49:12,480: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:49:12,525: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[009af66c-0a5e-432e-a3ed-73b8f82693ad]  
+[2024-04-10 10:49:12,620: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:49:13,440: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:49:13,442: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:49:13,444: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[009af66c-0a5e-432e-a3ed-73b8f82693ad] succeeded in 0.8838857669998106s: None
+[2024-04-10 10:49:42,486: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:49:42,489: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[bfa64f87-23dc-4587-8b11-3ca20a715b91]  
+[2024-04-10 10:49:42,520: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:49:42,527: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:49:42,528: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:49:42,529: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[bfa64f87-23dc-4587-8b11-3ca20a715b91] succeeded in 0.03778358900126477s: None
+[2024-04-10 10:49:52,638: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:49:52,641: INFO/MainProcess] Received task: referral.tasks.check_mailings[dbd86a8d-0ac8-410f-a9d5-8d9a16504b0f]  
+[2024-04-10 10:49:52,643: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:49:52,656: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[dbd86a8d-0ac8-410f-a9d5-8d9a16504b0f] succeeded in 0.012483025999245001s: None
+[2024-04-10 10:50:00,004: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:50:00,007: INFO/MainProcess] Received task: referral.tasks.remind_notify[228ab02c-8023-43d4-b400-20366647d318]  
+[2024-04-10 10:50:00,023: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:50:00,033: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[228ab02c-8023-43d4-b400-20366647d318] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:50:12,489: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:50:12,492: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[d8281301-7a41-4baf-a3c4-3112b3b49ba1]  
+[2024-04-10 10:50:12,528: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:50:12,535: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:50:12,536: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:50:12,537: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[d8281301-7a41-4baf-a3c4-3112b3b49ba1] succeeded in 0.04201813200052129s: None
+[2024-04-10 10:50:42,492: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:50:42,501: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[da1e594f-27c0-4bcc-8626-ecb88aa6e37d]  
+[2024-04-10 10:50:42,534: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:50:42,542: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:50:42,543: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:50:42,544: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[da1e594f-27c0-4bcc-8626-ecb88aa6e37d] succeeded in 0.039196146000904264s: None
+[2024-04-10 10:50:42,640: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:50:42,643: INFO/MainProcess] Received task: referral.tasks.check_mailings[9a7035d9-ddf0-4b18-a96c-fe48b64205a4]  
+[2024-04-10 10:50:42,645: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:50:42,658: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[9a7035d9-ddf0-4b18-a96c-fe48b64205a4] succeeded in 0.013367583000217564s: None
+[2024-04-10 10:51:00,002: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:51:00,005: INFO/MainProcess] Received task: referral.tasks.remind_notify[1087f42d-5558-4ae3-8130-45da19d7997f]  
+[2024-04-10 10:51:00,018: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:51:00,023: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[1087f42d-5558-4ae3-8130-45da19d7997f] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:51:12,494: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:51:12,497: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[9a205bb9-7d20-4a4e-9e77-22f8d85954a1]  
+[2024-04-10 10:51:12,544: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:51:12,550: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:51:12,551: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:51:12,552: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[9a205bb9-7d20-4a4e-9e77-22f8d85954a1] succeeded in 0.05320917700009886s: None
+[2024-04-10 10:51:32,642: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:51:32,646: INFO/MainProcess] Received task: referral.tasks.check_mailings[892de56f-3590-4710-a9c0-7e0dda0f5ae0]  
+[2024-04-10 10:51:32,651: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:51:32,664: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[892de56f-3590-4710-a9c0-7e0dda0f5ae0] succeeded in 0.013309072999618365s: None
+[2024-04-10 10:51:42,499: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:51:42,502: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[86ec3372-a746-4727-93df-7a4668f05c7e]  
+[2024-04-10 10:51:42,535: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:51:42,548: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:51:42,549: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:51:42,550: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[86ec3372-a746-4727-93df-7a4668f05c7e] succeeded in 0.046004584000911564s: None
+[2024-04-10 10:52:00,003: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:52:00,005: INFO/MainProcess] Received task: referral.tasks.remind_notify[200f2ed5-8159-4b5d-80ef-01c9fa1c39b5]  
+[2024-04-10 10:52:00,028: WARNING/ForkPoolWorker-2] 0

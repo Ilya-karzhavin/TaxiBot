@@ -54,6 +54,19 @@ services:
     networks:
       - backend
 
+  nginx:
+    build: nginx
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - core
+      - web_app
+    restart: always
+    networks:
+      - backend
+      
   telegram_bot:
     build: telegram_bot
     volumes:
@@ -83,6 +96,8 @@ services:
     depends_on:
       - telegram_bot
       - core
+    networks:
+      - backend
       
 
 networks:
