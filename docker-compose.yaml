@@ -7,8 +7,7 @@ services:
     restart: always
     env_file:
       - ./database/.env
-    volumes:
-      - ./database/data:/var/lib/postgresql/data
+
     networks:
       - backend
 
@@ -16,8 +15,7 @@ services:
     image: redis
     command: "redis-server --requirepass foobared"
     restart: always
-    env_file:
-      - ./redis/.env
+
     volumes:
       - ./redis:/data
     networks:
@@ -26,7 +24,7 @@ services:
   core:
     build: core
     command: sh -c "python manage.py migrate && python manage.py collectstatic
-      --no-input && sh ./bin/start_gunicorn.sh"
+      --no-input && python manage.py runserver 0.0.0.0:8001"
     restart: always
     volumes:
       - ./core:/app/core/

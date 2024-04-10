@@ -35,7 +35,7 @@ httpx==0.18.2
 idna==2.10
 importlib-metadata==3.10.1
 kombu==5.0.2
-marshmallow==3.11.1
+marshmallow
 openpyxl==3.0.7
 phonenumberslite==8.12.21
 Pillow==8.1.2

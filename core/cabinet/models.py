@@ -335,7 +335,7 @@ class Car(models.Model):
         "cabinet.CarBrand", verbose_name="Марка автомобиля", on_delete=models.PROTECT
     )
     number = models.CharField(
-        max_length=6, verbose_name="Номер автомобиля", help_text="Например: А766НН"
+        max_length=9, verbose_name="Номер автомобиля", help_text="Например: А766НН"
     )
     color = models.CharField(max_length=50, verbose_name="Цвет автомобиля")
 

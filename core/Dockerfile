@@ -1,4 +1,4 @@
-FROM python:3.8.5
+FROM python:3.10.6
 
 WORKDIR /app/core
 RUN pip install --upgrade pip setuptools wheel
@@ -19,4 +19,3 @@ COPY . .
 RUN chmod +x ./bin/start_gunicorn.sh
 RUN chmod +x bin/start_celery.sh
 
-CMD ["sh", "./bin/start_gunicorn.sh"]

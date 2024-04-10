@@ -29536,3 +29536,1871 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.8/site-packages/requests/adapters.py", line 516, in send
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPConnectionPool(host='telegram_bot', port=8080): Max retries exceeded with url: /_telegram_bot//mailing/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f754ac80b50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2024-04-10 09:02:27,315: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:02:27,369: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:02:28,447: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:02:28,523: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:02:28,541: INFO/MainProcess] celery@8b2506588a70 ready.
+[2024-04-10 09:02:29,824: INFO/Beat] beat: Starting...
+[2024-04-10 09:02:32,714: ERROR/Beat] Process Beat
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 41, in __get__
+    return obj.__dict__[self.__name__]
+KeyError: 'scheduler'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "77.222.53.158" and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/billiard/process.py", line 327, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 703, in run
+    self.service.start(embedded_process=True)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 618, in start
+    humanize_seconds(self.scheduler.max_interval))
+  File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 43, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 662, in scheduler
+    return self.get_scheduler()
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 653, in get_scheduler
+    return symbol_by_name(self.scheduler_cls, aliases=aliases)(
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 231, in __init__
+    Scheduler.__init__(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 253, in __init__
+    self.setup_schedule()
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 239, in setup_schedule
+    self.install_default_entries(self.schedule)
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 361, in schedule
+    self._schedule = self.all_as_schedule()
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 245, in all_as_schedule
+    for model in self.Model.objects.enabled():
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1167, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+  File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "77.222.53.158" and accepting
+	TCP/IP connections on port 5432?
+
+[2024-04-10 09:02:32,846: WARNING/Beat] Process Beat:
+[2024-04-10 09:02:32,853: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:02:32,862: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 41, in __get__
+    return obj.__dict__[self.__name__]
+[2024-04-10 09:02:32,867: WARNING/Beat] KeyError: 'scheduler'
+[2024-04-10 09:02:32,871: WARNING/Beat] During handling of the above exception, another exception occurred:
+[2024-04-10 09:02:32,881: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:02:32,882: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+[2024-04-10 09:02:32,889: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:02:32,895: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+[2024-04-10 09:02:32,896: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:02:32,896: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+[2024-04-10 09:02:32,897: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2024-04-10 09:02:32,898: WARNING/Beat] psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "77.222.53.158" and accepting
+	TCP/IP connections on port 5432?
+[2024-04-10 09:02:32,901: WARNING/Beat] The above exception was the direct cause of the following exception:
+[2024-04-10 09:02:32,903: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:02:32,905: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/billiard/process.py", line 327, in _bootstrap
+    self.run()
+[2024-04-10 09:02:32,908: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 703, in run
+    self.service.start(embedded_process=True)
+[2024-04-10 09:02:32,912: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 618, in start
+    humanize_seconds(self.scheduler.max_interval))
+[2024-04-10 09:02:32,915: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 43, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+[2024-04-10 09:02:32,916: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 662, in scheduler
+    return self.get_scheduler()
+[2024-04-10 09:02:32,919: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 653, in get_scheduler
+    return symbol_by_name(self.scheduler_cls, aliases=aliases)(
+[2024-04-10 09:02:32,922: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 231, in __init__
+    Scheduler.__init__(self, *args, **kwargs)
+[2024-04-10 09:02:32,928: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 253, in __init__
+    self.setup_schedule()
+[2024-04-10 09:02:32,933: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 239, in setup_schedule
+    self.install_default_entries(self.schedule)
+[2024-04-10 09:02:32,939: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 361, in schedule
+    self._schedule = self.all_as_schedule()
+[2024-04-10 09:02:32,941: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 245, in all_as_schedule
+    for model in self.Model.objects.enabled():
+[2024-04-10 09:02:32,944: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+[2024-04-10 09:02:32,945: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+[2024-04-10 09:02:32,947: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+[2024-04-10 09:02:32,950: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1167, in execute_sql
+    cursor = self.connection.cursor()
+[2024-04-10 09:02:32,953: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:02:32,955: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+[2024-04-10 09:02:32,956: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+[2024-04-10 09:02:32,958: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:02:32,961: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+[2024-04-10 09:02:32,967: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+[2024-04-10 09:02:32,967: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+[2024-04-10 09:02:32,970: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:02:32,972: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+[2024-04-10 09:02:32,974: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:02:32,977: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+[2024-04-10 09:02:32,979: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2024-04-10 09:02:32,980: WARNING/Beat] django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "77.222.53.158" and accepting
+	TCP/IP connections on port 5432?
+[2024-04-10 09:04:57,651: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:04:57,720: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:04:58,744: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:04:58,758: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:04:58,759: INFO/MainProcess] celery@f2849c7e4e0b ready.
+[2024-04-10 09:05:01,225: INFO/Beat] beat: Starting...
+[2024-04-10 09:05:04,191: ERROR/Beat] Process Beat
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 41, in __get__
+    return obj.__dict__[self.__name__]
+KeyError: 'scheduler'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "77.222.53.158" and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/billiard/process.py", line 327, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 703, in run
+    self.service.start(embedded_process=True)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 618, in start
+    humanize_seconds(self.scheduler.max_interval))
+  File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 43, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 662, in scheduler
+    return self.get_scheduler()
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 653, in get_scheduler
+    return symbol_by_name(self.scheduler_cls, aliases=aliases)(
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 231, in __init__
+    Scheduler.__init__(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 253, in __init__
+    self.setup_schedule()
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 239, in setup_schedule
+    self.install_default_entries(self.schedule)
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 361, in schedule
+    self._schedule = self.all_as_schedule()
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 245, in all_as_schedule
+    for model in self.Model.objects.enabled():
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1167, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+  File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "77.222.53.158" and accepting
+	TCP/IP connections on port 5432?
+
+[2024-04-10 09:05:04,217: WARNING/Beat] Process Beat:
+[2024-04-10 09:05:04,221: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:05:04,222: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 41, in __get__
+    return obj.__dict__[self.__name__]
+[2024-04-10 09:05:04,230: WARNING/Beat] KeyError: 'scheduler'
+[2024-04-10 09:05:04,244: WARNING/Beat] During handling of the above exception, another exception occurred:
+[2024-04-10 09:05:04,248: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:05:04,268: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+[2024-04-10 09:05:04,269: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:05:04,273: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+[2024-04-10 09:05:04,278: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:05:04,287: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+[2024-04-10 09:05:04,309: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2024-04-10 09:05:04,310: WARNING/Beat] psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "77.222.53.158" and accepting
+	TCP/IP connections on port 5432?
+[2024-04-10 09:05:04,316: WARNING/Beat] The above exception was the direct cause of the following exception:
+[2024-04-10 09:05:04,331: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:05:04,332: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/billiard/process.py", line 327, in _bootstrap
+    self.run()
+[2024-04-10 09:05:04,334: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 703, in run
+    self.service.start(embedded_process=True)
+[2024-04-10 09:05:04,340: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 618, in start
+    humanize_seconds(self.scheduler.max_interval))
+[2024-04-10 09:05:04,372: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 43, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+[2024-04-10 09:05:04,408: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 662, in scheduler
+    return self.get_scheduler()
+[2024-04-10 09:05:04,409: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 653, in get_scheduler
+    return symbol_by_name(self.scheduler_cls, aliases=aliases)(
+[2024-04-10 09:05:04,410: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 231, in __init__
+    Scheduler.__init__(self, *args, **kwargs)
+[2024-04-10 09:05:04,412: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 253, in __init__
+    self.setup_schedule()
+[2024-04-10 09:05:04,413: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 239, in setup_schedule
+    self.install_default_entries(self.schedule)
+[2024-04-10 09:05:04,414: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 361, in schedule
+    self._schedule = self.all_as_schedule()
+[2024-04-10 09:05:04,415: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 245, in all_as_schedule
+    for model in self.Model.objects.enabled():
+[2024-04-10 09:05:04,415: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+[2024-04-10 09:05:04,416: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+[2024-04-10 09:05:04,420: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+[2024-04-10 09:05:04,433: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1167, in execute_sql
+    cursor = self.connection.cursor()
+[2024-04-10 09:05:04,441: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:05:04,443: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+[2024-04-10 09:05:04,445: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+[2024-04-10 09:05:04,453: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:05:04,458: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+[2024-04-10 09:05:04,473: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+[2024-04-10 09:05:04,474: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+[2024-04-10 09:05:04,477: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:05:04,480: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+[2024-04-10 09:05:04,483: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:05:04,485: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+[2024-04-10 09:05:04,487: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2024-04-10 09:05:04,489: WARNING/Beat] django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "77.222.53.158" and accepting
+	TCP/IP connections on port 5432?
+[2024-04-10 09:08:16,942: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:08:16,974: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:08:18,056: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:08:18,124: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:08:18,136: INFO/MainProcess] celery@df0065a266a8 ready.
+[2024-04-10 09:08:20,029: INFO/Beat] beat: Starting...
+[2024-04-10 09:08:20,052: ERROR/Beat] Process Beat
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 41, in __get__
+    return obj.__dict__[self.__name__]
+KeyError: 'scheduler'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Cannot assign requested address
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/billiard/process.py", line 327, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 703, in run
+    self.service.start(embedded_process=True)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 618, in start
+    humanize_seconds(self.scheduler.max_interval))
+  File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 43, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 662, in scheduler
+    return self.get_scheduler()
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 653, in get_scheduler
+    return symbol_by_name(self.scheduler_cls, aliases=aliases)(
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 231, in __init__
+    Scheduler.__init__(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 253, in __init__
+    self.setup_schedule()
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 239, in setup_schedule
+    self.install_default_entries(self.schedule)
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 361, in schedule
+    self._schedule = self.all_as_schedule()
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 245, in all_as_schedule
+    for model in self.Model.objects.enabled():
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1167, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+  File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Cannot assign requested address
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+
+[2024-04-10 09:08:20,073: WARNING/Beat] Process Beat:
+[2024-04-10 09:08:20,077: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:08:20,078: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 41, in __get__
+    return obj.__dict__[self.__name__]
+[2024-04-10 09:08:20,078: WARNING/Beat] KeyError: 'scheduler'
+[2024-04-10 09:08:20,079: WARNING/Beat] During handling of the above exception, another exception occurred:
+[2024-04-10 09:08:20,080: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:08:20,080: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+[2024-04-10 09:08:20,081: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:08:20,082: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+[2024-04-10 09:08:20,082: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:08:20,083: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+[2024-04-10 09:08:20,083: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2024-04-10 09:08:20,084: WARNING/Beat] psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Cannot assign requested address
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+[2024-04-10 09:08:20,085: WARNING/Beat] The above exception was the direct cause of the following exception:
+[2024-04-10 09:08:20,085: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:08:20,086: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/billiard/process.py", line 327, in _bootstrap
+    self.run()
+[2024-04-10 09:08:20,087: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 703, in run
+    self.service.start(embedded_process=True)
+[2024-04-10 09:08:20,089: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 618, in start
+    humanize_seconds(self.scheduler.max_interval))
+[2024-04-10 09:08:20,095: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 43, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+[2024-04-10 09:08:20,096: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 662, in scheduler
+    return self.get_scheduler()
+[2024-04-10 09:08:20,096: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 653, in get_scheduler
+    return symbol_by_name(self.scheduler_cls, aliases=aliases)(
+[2024-04-10 09:08:20,097: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 231, in __init__
+    Scheduler.__init__(self, *args, **kwargs)
+[2024-04-10 09:08:20,097: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 253, in __init__
+    self.setup_schedule()
+[2024-04-10 09:08:20,098: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 239, in setup_schedule
+    self.install_default_entries(self.schedule)
+[2024-04-10 09:08:20,098: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 361, in schedule
+    self._schedule = self.all_as_schedule()
+[2024-04-10 09:08:20,099: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 245, in all_as_schedule
+    for model in self.Model.objects.enabled():
+[2024-04-10 09:08:20,099: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+[2024-04-10 09:08:20,100: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+[2024-04-10 09:08:20,100: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+[2024-04-10 09:08:20,101: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1167, in execute_sql
+    cursor = self.connection.cursor()
+[2024-04-10 09:08:20,101: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:08:20,102: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+[2024-04-10 09:08:20,102: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+[2024-04-10 09:08:20,103: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:08:20,104: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+[2024-04-10 09:08:20,104: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+[2024-04-10 09:08:20,105: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+[2024-04-10 09:08:20,106: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:08:20,107: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+[2024-04-10 09:08:20,108: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:08:20,115: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+[2024-04-10 09:08:20,116: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2024-04-10 09:08:20,116: WARNING/Beat] django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Cannot assign requested address
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+[2024-04-10 09:12:07,623: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:12:07,656: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:12:08,705: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:12:08,785: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:12:08,786: INFO/MainProcess] celery@f3873149a8e0 ready.
+[2024-04-10 09:12:10,888: INFO/Beat] beat: Starting...
+[2024-04-10 09:12:11,032: ERROR/Beat] Process Beat
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 41, in __get__
+    return obj.__dict__[self.__name__]
+KeyError: 'scheduler'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Cannot assign requested address
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/billiard/process.py", line 327, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 703, in run
+    self.service.start(embedded_process=True)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 618, in start
+    humanize_seconds(self.scheduler.max_interval))
+  File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 43, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 662, in scheduler
+    return self.get_scheduler()
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 653, in get_scheduler
+    return symbol_by_name(self.scheduler_cls, aliases=aliases)(
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 231, in __init__
+    Scheduler.__init__(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 253, in __init__
+    self.setup_schedule()
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 239, in setup_schedule
+    self.install_default_entries(self.schedule)
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 361, in schedule
+    self._schedule = self.all_as_schedule()
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 245, in all_as_schedule
+    for model in self.Model.objects.enabled():
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1167, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+  File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Cannot assign requested address
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+
+[2024-04-10 09:12:11,105: WARNING/Beat] Process Beat:
+[2024-04-10 09:12:11,116: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:12:11,120: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 41, in __get__
+    return obj.__dict__[self.__name__]
+[2024-04-10 09:12:11,146: WARNING/Beat] KeyError: 'scheduler'
+[2024-04-10 09:12:11,154: WARNING/Beat] During handling of the above exception, another exception occurred:
+[2024-04-10 09:12:11,156: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:12:11,157: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+[2024-04-10 09:12:11,157: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:12:11,158: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+[2024-04-10 09:12:11,159: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:12:11,159: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+[2024-04-10 09:12:11,160: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2024-04-10 09:12:11,160: WARNING/Beat] psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Cannot assign requested address
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+[2024-04-10 09:12:11,161: WARNING/Beat] The above exception was the direct cause of the following exception:
+[2024-04-10 09:12:11,162: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:12:11,163: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/billiard/process.py", line 327, in _bootstrap
+    self.run()
+[2024-04-10 09:12:11,169: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 703, in run
+    self.service.start(embedded_process=True)
+[2024-04-10 09:12:11,173: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 618, in start
+    humanize_seconds(self.scheduler.max_interval))
+[2024-04-10 09:12:11,173: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 43, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+[2024-04-10 09:12:11,174: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 662, in scheduler
+    return self.get_scheduler()
+[2024-04-10 09:12:11,175: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 653, in get_scheduler
+    return symbol_by_name(self.scheduler_cls, aliases=aliases)(
+[2024-04-10 09:12:11,175: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 231, in __init__
+    Scheduler.__init__(self, *args, **kwargs)
+[2024-04-10 09:12:11,176: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 253, in __init__
+    self.setup_schedule()
+[2024-04-10 09:12:11,177: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 239, in setup_schedule
+    self.install_default_entries(self.schedule)
+[2024-04-10 09:12:11,177: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 361, in schedule
+    self._schedule = self.all_as_schedule()
+[2024-04-10 09:12:11,193: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 245, in all_as_schedule
+    for model in self.Model.objects.enabled():
+[2024-04-10 09:12:11,206: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+[2024-04-10 09:12:11,207: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+[2024-04-10 09:12:11,210: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+[2024-04-10 09:12:11,218: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1167, in execute_sql
+    cursor = self.connection.cursor()
+[2024-04-10 09:12:11,221: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:12:11,223: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+[2024-04-10 09:12:11,229: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+[2024-04-10 09:12:11,233: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:12:11,240: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+[2024-04-10 09:12:11,241: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+[2024-04-10 09:12:11,243: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+[2024-04-10 09:12:11,243: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:12:11,244: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+[2024-04-10 09:12:11,244: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:12:11,245: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+[2024-04-10 09:12:11,245: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2024-04-10 09:12:11,246: WARNING/Beat] django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Cannot assign requested address
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+[2024-04-10 09:14:13,340: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:14:13,372: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:14:14,437: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:14:14,470: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:14:14,471: INFO/MainProcess] celery@66f54276dbf5 ready.
+[2024-04-10 09:14:17,758: INFO/Beat] beat: Starting...
+[2024-04-10 09:14:17,790: ERROR/Beat] Process Beat
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 41, in __get__
+    return obj.__dict__[self.__name__]
+KeyError: 'scheduler'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "database" (172.18.0.3) and accepting
+	TCP/IP connections on port 5432?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/billiard/process.py", line 327, in _bootstrap
+    self.run()
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 703, in run
+    self.service.start(embedded_process=True)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 618, in start
+    humanize_seconds(self.scheduler.max_interval))
+  File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 43, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 662, in scheduler
+    return self.get_scheduler()
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 653, in get_scheduler
+    return symbol_by_name(self.scheduler_cls, aliases=aliases)(
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 231, in __init__
+    Scheduler.__init__(self, *args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 253, in __init__
+    self.setup_schedule()
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 239, in setup_schedule
+    self.install_default_entries(self.schedule)
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 361, in schedule
+    self._schedule = self.all_as_schedule()
+  File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 245, in all_as_schedule
+    for model in self.Model.objects.enabled():
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1167, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+  File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "database" (172.18.0.3) and accepting
+	TCP/IP connections on port 5432?
+
+[2024-04-10 09:14:17,806: WARNING/Beat] Process Beat:
+[2024-04-10 09:14:17,808: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:14:17,812: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 41, in __get__
+    return obj.__dict__[self.__name__]
+[2024-04-10 09:14:17,814: WARNING/Beat] KeyError: 'scheduler'
+[2024-04-10 09:14:17,816: WARNING/Beat] During handling of the above exception, another exception occurred:
+[2024-04-10 09:14:17,823: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:14:17,825: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+[2024-04-10 09:14:17,828: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:14:17,830: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+[2024-04-10 09:14:17,831: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:14:17,832: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+[2024-04-10 09:14:17,832: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2024-04-10 09:14:17,833: WARNING/Beat] psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "database" (172.18.0.3) and accepting
+	TCP/IP connections on port 5432?
+[2024-04-10 09:14:17,833: WARNING/Beat] The above exception was the direct cause of the following exception:
+[2024-04-10 09:14:17,833: WARNING/Beat] Traceback (most recent call last):
+[2024-04-10 09:14:17,834: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/billiard/process.py", line 327, in _bootstrap
+    self.run()
+[2024-04-10 09:14:17,834: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 703, in run
+    self.service.start(embedded_process=True)
+[2024-04-10 09:14:17,840: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 618, in start
+    humanize_seconds(self.scheduler.max_interval))
+[2024-04-10 09:14:17,863: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/kombu/utils/objects.py", line 43, in __get__
+    value = obj.__dict__[self.__name__] = self.__get(obj)
+[2024-04-10 09:14:17,864: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 662, in scheduler
+    return self.get_scheduler()
+[2024-04-10 09:14:17,864: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 653, in get_scheduler
+    return symbol_by_name(self.scheduler_cls, aliases=aliases)(
+[2024-04-10 09:14:17,865: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 231, in __init__
+    Scheduler.__init__(self, *args, **kwargs)
+[2024-04-10 09:14:17,880: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/celery/beat.py", line 253, in __init__
+    self.setup_schedule()
+[2024-04-10 09:14:17,897: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 239, in setup_schedule
+    self.install_default_entries(self.schedule)
+[2024-04-10 09:14:17,898: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 361, in schedule
+    self._schedule = self.all_as_schedule()
+[2024-04-10 09:14:17,900: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django_celery_beat/schedulers.py", line 245, in all_as_schedule
+    for model in self.Model.objects.enabled():
+[2024-04-10 09:14:17,902: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 280, in __iter__
+    self._fetch_all()
+[2024-04-10 09:14:17,908: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+[2024-04-10 09:14:17,910: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+[2024-04-10 09:14:17,917: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1167, in execute_sql
+    cursor = self.connection.cursor()
+[2024-04-10 09:14:17,919: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:14:17,919: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 259, in cursor
+    return self._cursor()
+[2024-04-10 09:14:17,921: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 235, in _cursor
+    self.ensure_connection()
+[2024-04-10 09:14:17,922: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:14:17,922: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 218, in ensure_connection
+    with self.wrap_database_errors:
+[2024-04-10 09:14:17,923: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+[2024-04-10 09:14:17,923: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 219, in ensure_connection
+    self.connect()
+[2024-04-10 09:14:17,924: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:14:17,924: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 200, in connect
+    self.connection = self.get_new_connection(conn_params)
+[2024-04-10 09:14:17,925: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+[2024-04-10 09:14:17,925: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/django/db/backends/postgresql/base.py", line 187, in get_new_connection
+    connection = Database.connect(**conn_params)
+[2024-04-10 09:14:17,926: WARNING/Beat] File "/usr/local/lib/python3.10/site-packages/psycopg2/__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2024-04-10 09:14:17,926: WARNING/Beat] django.db.utils.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "database" (172.18.0.3) and accepting
+	TCP/IP connections on port 5432?
+[2024-04-10 09:23:41,522: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:23:41,557: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:23:42,617: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:23:42,692: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:23:42,693: INFO/MainProcess] celery@bb1325d64d10 ready.
+[2024-04-10 09:23:44,380: INFO/Beat] beat: Starting...
+[2024-04-10 09:23:44,787: INFO/Beat] DatabaseScheduler: Schedule changed.
+[2024-04-10 09:24:14,881: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:24:14,942: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[8e6b08f8-d0c8-4c9e-baae-71af9fc6ce50]  
+[2024-04-10 09:24:15,067: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:24:15,097: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:24:15,101: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:24:15,108: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[8e6b08f8-d0c8-4c9e-baae-71af9fc6ce50] succeeded in 0.15880443900005048s: None
+[2024-04-10 09:24:34,726: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:24:34,738: INFO/MainProcess] Received task: referral.tasks.check_mailings[1023c1a8-eafe-4d64-99db-9de9ea9b4bd1]  
+[2024-04-10 09:24:34,749: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:24:34,815: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[1023c1a8-eafe-4d64-99db-9de9ea9b4bd1] succeeded in 0.06631184199977724s: None
+[2024-04-10 09:24:45,479: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:24:45,485: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[c85db97c-c68f-42fe-bc87-23159d25b6bf]  
+[2024-04-10 09:24:45,583: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:24:45,599: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:24:45,599: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:24:45,600: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[c85db97c-c68f-42fe-bc87-23159d25b6bf] succeeded in 0.10613920500054519s: None
+[2024-04-10 09:25:15,493: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:25:15,502: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[e6fd7092-94a3-438f-984f-35660521dd06]  
+[2024-04-10 09:25:15,574: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:25:15,587: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:25:15,588: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:25:15,596: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[e6fd7092-94a3-438f-984f-35660521dd06] succeeded in 0.08032985799945891s: None
+[2024-04-10 09:25:24,752: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:25:24,761: INFO/MainProcess] Received task: referral.tasks.check_mailings[6b606a59-ce2f-4f79-9243-30db37eb9045]  
+[2024-04-10 09:25:24,763: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:25:24,805: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[6b606a59-ce2f-4f79-9243-30db37eb9045] succeeded in 0.04198962999998912s: None
+[2024-04-10 09:25:45,500: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:25:45,512: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[853b5b41-a702-4cf0-ae57-62b8639a7fa0]  
+[2024-04-10 09:25:45,617: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:25:45,625: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:25:45,627: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:25:45,630: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[853b5b41-a702-4cf0-ae57-62b8639a7fa0] succeeded in 0.11470002399983059s: None
+[2024-04-10 09:26:14,787: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:26:14,804: INFO/MainProcess] Received task: referral.tasks.check_mailings[08c8aff1-d75f-4de1-b7bc-424bb4fe69b0]  
+[2024-04-10 09:26:14,821: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:26:14,874: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[08c8aff1-d75f-4de1-b7bc-424bb4fe69b0] succeeded in 0.0531657150004321s: None
+[2024-04-10 09:26:15,544: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:26:15,560: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[647f5db6-dd3d-4e83-9396-85d9f6e7e7ef]  
+[2024-04-10 09:26:15,656: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:26:15,687: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:26:15,688: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:26:15,689: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[647f5db6-dd3d-4e83-9396-85d9f6e7e7ef] succeeded in 0.11715068000012252s: None
+[2024-04-10 09:26:45,550: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:26:45,553: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[050d5d9e-c848-42c1-8507-70d77d671ece]  
+[2024-04-10 09:26:45,597: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:26:45,608: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:26:45,609: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:26:45,609: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[050d5d9e-c848-42c1-8507-70d77d671ece] succeeded in 0.05412533999970037s: None
+[2024-04-10 09:27:04,790: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:27:04,794: INFO/MainProcess] Received task: referral.tasks.check_mailings[e2c18d11-19d8-48f1-b54e-5a39c288b8db]  
+[2024-04-10 09:27:04,796: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:27:04,850: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[e2c18d11-19d8-48f1-b54e-5a39c288b8db] succeeded in 0.05381106799995905s: None
+[2024-04-10 09:27:15,565: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:27:15,571: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[57735c03-4301-4c40-9bdd-497315dfd29d]  
+[2024-04-10 09:27:15,631: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:27:15,642: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:27:15,643: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:27:15,648: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[57735c03-4301-4c40-9bdd-497315dfd29d] succeeded in 0.07534322700030316s: None
+[2024-04-10 09:27:45,579: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:27:45,587: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[f8ed59c2-3756-4989-89e0-345fa35076b2]  
+[2024-04-10 09:27:45,638: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:27:45,647: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:27:45,649: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:27:45,650: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[f8ed59c2-3756-4989-89e0-345fa35076b2] succeeded in 0.05897733999972843s: None
+[2024-04-10 09:27:54,794: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:27:54,797: INFO/MainProcess] Received task: referral.tasks.check_mailings[03a30cf7-c60c-48af-812e-8ae1183cc88b]  
+[2024-04-10 09:27:54,799: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:27:54,812: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[03a30cf7-c60c-48af-812e-8ae1183cc88b] succeeded in 0.013057633000244095s: None
+[2024-04-10 09:28:15,595: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:28:15,605: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[c91a86f5-0ec4-4a55-b6ba-f0eaa9199c4a]  
+[2024-04-10 09:28:15,687: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:28:15,717: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:28:15,719: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:28:15,720: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[c91a86f5-0ec4-4a55-b6ba-f0eaa9199c4a] succeeded in 0.09382938700036902s: None
+[2024-04-10 09:28:44,803: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:28:44,818: INFO/MainProcess] Received task: referral.tasks.check_mailings[324870c2-b0ac-48f5-a365-7f46b66759a7]  
+[2024-04-10 09:28:44,820: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:28:44,853: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[324870c2-b0ac-48f5-a365-7f46b66759a7] succeeded in 0.033214967000276374s: None
+[2024-04-10 09:28:45,607: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:28:45,614: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[d05b1afa-8183-4b60-abab-9ebd8d3ed0b6]  
+[2024-04-10 09:28:45,673: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:28:45,686: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:28:45,687: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:28:45,687: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[d05b1afa-8183-4b60-abab-9ebd8d3ed0b6] succeeded in 0.06940494999980729s: None
+[2024-04-10 09:29:15,624: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:29:15,627: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[b9a0b545-ae89-4f6b-8797-cece27997e99]  
+[2024-04-10 09:29:15,711: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:29:15,741: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:29:15,742: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:29:15,743: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[b9a0b545-ae89-4f6b-8797-cece27997e99] succeeded in 0.11291484800040053s: None
+[2024-04-10 09:29:34,830: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:29:34,845: INFO/MainProcess] Received task: referral.tasks.check_mailings[409471a4-ab7c-41f9-a60c-f6f339fe2063]  
+[2024-04-10 09:29:34,851: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:29:34,908: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[409471a4-ab7c-41f9-a60c-f6f339fe2063] succeeded in 0.05703835900021659s: None
+[2024-04-10 09:29:45,631: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:29:45,646: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[e98c3482-8701-4737-8c69-b51856389db9]  
+[2024-04-10 09:29:45,716: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:29:45,729: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:29:45,729: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:29:45,730: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[e98c3482-8701-4737-8c69-b51856389db9] succeeded in 0.08035556100003305s: None
+[2024-04-10 09:30:15,646: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:30:15,651: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[6b39ba7b-dcb1-4dd6-a0ff-c81641ab2f0a]  
+[2024-04-10 09:30:15,754: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:30:15,785: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:30:15,786: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:30:15,787: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[6b39ba7b-dcb1-4dd6-a0ff-c81641ab2f0a] succeeded in 0.12777999399986584s: None
+[2024-04-10 09:30:24,872: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:30:24,875: INFO/MainProcess] Received task: referral.tasks.check_mailings[73f84a92-7220-4af8-a9dc-56df5fb6d02f]  
+[2024-04-10 09:30:24,884: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:30:24,948: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[73f84a92-7220-4af8-a9dc-56df5fb6d02f] succeeded in 0.06429541199941013s: None
+[2024-04-10 09:30:45,649: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:30:45,653: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[7d414bd0-0165-436b-a5a2-d7da3fdb00e7]  
+[2024-04-10 09:30:45,709: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:30:45,717: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:30:45,718: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:30:45,719: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[7d414bd0-0165-436b-a5a2-d7da3fdb00e7] succeeded in 0.0604621379998207s: None
+[2024-04-10 09:31:14,875: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:31:14,878: INFO/MainProcess] Received task: referral.tasks.check_mailings[19b17d25-b697-4a93-9452-688de7557a48]  
+[2024-04-10 09:31:14,880: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:31:14,902: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[19b17d25-b697-4a93-9452-688de7557a48] succeeded in 0.021634225999150658s: None
+[2024-04-10 09:31:15,651: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:31:15,655: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[630bd394-5f9b-470b-a765-3aa22727492d]  
+[2024-04-10 09:31:15,733: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:31:15,743: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:31:15,744: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:31:15,744: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[630bd394-5f9b-470b-a765-3aa22727492d] succeeded in 0.07114234399978159s: None
+[2024-04-10 09:31:45,673: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:31:45,680: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[58b406f9-e4d3-4f11-b63e-87315b7fc6bd]  
+[2024-04-10 09:31:45,726: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:31:45,740: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:31:45,741: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:31:45,742: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[58b406f9-e4d3-4f11-b63e-87315b7fc6bd] succeeded in 0.057821328000500216s: None
+[2024-04-10 09:32:04,880: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:32:04,885: INFO/MainProcess] Received task: referral.tasks.check_mailings[100182fe-895c-48c9-8c3a-662598873097]  
+[2024-04-10 09:32:04,886: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:32:04,901: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[100182fe-895c-48c9-8c3a-662598873097] succeeded in 0.014515512999423663s: None
+[2024-04-10 09:32:15,675: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:32:15,679: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[418e09e0-1593-4bef-908a-087b945a11d1]  
+[2024-04-10 09:32:16,205: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:32:16,213: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:32:16,214: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:32:16,215: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[418e09e0-1593-4bef-908a-087b945a11d1] succeeded in 0.5344741510007225s: None
+[2024-04-10 09:32:45,679: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:32:45,682: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[c676ba62-ecd2-4ef4-a764-81fa0a066bf8]  
+[2024-04-10 09:32:45,943: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:32:45,952: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:32:45,953: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:32:45,954: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[c676ba62-ecd2-4ef4-a764-81fa0a066bf8] succeeded in 0.269963996000115s: None
+[2024-04-10 09:32:54,885: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:32:54,888: INFO/MainProcess] Received task: referral.tasks.check_mailings[ca915ba5-0e49-4b56-9919-88c9c0d76e56]  
+[2024-04-10 09:32:54,890: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:32:54,910: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[ca915ba5-0e49-4b56-9919-88c9c0d76e56] succeeded in 0.020170047999272356s: None
+[2024-04-10 09:33:15,704: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:33:15,710: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[f610c74e-78d4-40d9-8fa3-16483f277d64]  
+[2024-04-10 09:33:15,790: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:33:15,807: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:33:15,811: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:33:15,813: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[f610c74e-78d4-40d9-8fa3-16483f277d64] succeeded in 0.10092154999983904s: None
+[2024-04-10 09:33:36,190: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:33:36,213: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:33:37,251: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:33:37,295: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:33:37,301: INFO/MainProcess] celery@debc1dddff52 ready.
+[2024-04-10 09:33:38,715: INFO/Beat] beat: Starting...
+[2024-04-10 09:33:39,058: INFO/Beat] DatabaseScheduler: Schedule changed.
+[2024-04-10 09:33:39,168: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:33:39,195: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[c45e34ff-c6de-452a-8334-49795089c19e]  
+[2024-04-10 09:33:39,313: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:33:39,334: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:33:39,335: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:33:39,344: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[c45e34ff-c6de-452a-8334-49795089c19e] succeeded in 0.14637675999983912s: None
+[2024-04-10 09:33:44,909: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:33:44,925: INFO/MainProcess] Received task: referral.tasks.check_mailings[381bac1c-9a24-49a0-a55a-95f6e0ab8454]  
+[2024-04-10 09:33:44,938: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:33:44,963: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[381bac1c-9a24-49a0-a55a-95f6e0ab8454] succeeded in 0.024153303000275628s: None
+[2024-04-10 09:34:09,173: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:34:09,182: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[47dabd86-2ce8-4d35-97bb-c9510ff3997b]  
+[2024-04-10 09:34:09,251: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:34:09,278: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:34:09,282: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:34:09,285: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[47dabd86-2ce8-4d35-97bb-c9510ff3997b] succeeded in 0.10001355199983664s: None
+[2024-04-10 09:34:34,919: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:34:34,933: INFO/MainProcess] Received task: referral.tasks.check_mailings[e0ca51c2-2b1d-4589-ae0c-bb2e4856d77d]  
+[2024-04-10 09:34:34,937: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:34:34,961: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[e0ca51c2-2b1d-4589-ae0c-bb2e4856d77d] succeeded in 0.02428951300043991s: None
+[2024-04-10 09:34:39,188: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:34:39,202: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[77313d5a-7694-4a2f-8c6d-526c3fce7d8c]  
+[2024-04-10 09:34:39,290: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:34:39,310: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:34:39,311: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:34:39,312: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[77313d5a-7694-4a2f-8c6d-526c3fce7d8c] succeeded in 0.09865350799918815s: None
+[2024-04-10 09:35:09,219: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:35:09,233: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[2fa1244d-18ec-4560-8e43-e1d41d38afb5]  
+[2024-04-10 09:35:09,465: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:35:09,492: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:35:09,494: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:35:09,495: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[2fa1244d-18ec-4560-8e43-e1d41d38afb5] succeeded in 0.23229060099947674s: None
+[2024-04-10 09:35:24,933: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:35:24,949: INFO/MainProcess] Received task: referral.tasks.check_mailings[a7960666-21c3-4a60-8431-960e50d69632]  
+[2024-04-10 09:35:24,961: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:35:24,990: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[a7960666-21c3-4a60-8431-960e50d69632] succeeded in 0.029146551999474468s: None
+[2024-04-10 09:35:39,254: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:35:39,267: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[ace7b9c4-bf90-4e2b-b1bb-0a7e3754a2cc]  
+[2024-04-10 09:35:39,374: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:35:39,391: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:35:39,393: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:35:39,393: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[ace7b9c4-bf90-4e2b-b1bb-0a7e3754a2cc] succeeded in 0.12514822599951003s: None
+[2024-04-10 09:36:09,284: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:36:09,287: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[2524a037-39ba-41b8-9716-60cd262126d9]  
+[2024-04-10 09:36:09,366: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:36:09,382: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:36:09,383: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:36:09,384: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[2524a037-39ba-41b8-9716-60cd262126d9] succeeded in 0.08557969000048615s: None
+[2024-04-10 09:36:28,633: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:36:28,658: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:36:29,766: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:36:29,839: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:36:29,841: INFO/MainProcess] celery@2d8e36c0ee57 ready.
+[2024-04-10 09:36:31,693: INFO/Beat] beat: Starting...
+[2024-04-10 09:36:32,429: INFO/Beat] DatabaseScheduler: Schedule changed.
+[2024-04-10 09:36:32,634: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:36:32,674: INFO/MainProcess] Received task: referral.tasks.check_mailings[2c08d6c3-1d8e-4bb1-baf2-544b58a0ac45]  
+[2024-04-10 09:36:32,678: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:36:32,755: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[2c08d6c3-1d8e-4bb1-baf2-544b58a0ac45] succeeded in 0.07682764099990891s: None
+[2024-04-10 09:36:32,780: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:36:32,796: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[9bfdff41-bfea-4dbb-8c32-d2a066023b84]  
+[2024-04-10 09:36:32,889: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:36:32,911: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:36:32,922: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:36:32,933: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[9bfdff41-bfea-4dbb-8c32-d2a066023b84] succeeded in 0.13421661800020956s: None
+[2024-04-10 09:37:02,786: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:37:02,789: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[eefd9629-7c97-4f7b-a688-f0cf9b69114c]  
+[2024-04-10 09:37:02,826: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:37:02,834: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:37:02,835: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:37:02,835: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[eefd9629-7c97-4f7b-a688-f0cf9b69114c] succeeded in 0.04384822800057009s: None
+[2024-04-10 09:37:22,608: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:37:22,611: INFO/MainProcess] Received task: referral.tasks.check_mailings[1fd8f676-c2d1-48fe-8f78-472e96959acb]  
+[2024-04-10 09:37:22,613: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:37:22,630: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[1fd8f676-c2d1-48fe-8f78-472e96959acb] succeeded in 0.016423906999989413s: None
+[2024-04-10 09:37:33,272: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:37:33,275: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[81712d5a-704c-47bb-8bae-e537e055b4e4]  
+[2024-04-10 09:37:33,353: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:37:33,366: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:37:33,373: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:37:33,383: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[81712d5a-704c-47bb-8bae-e537e055b4e4] succeeded in 0.0659056859994962s: None
+[2024-04-10 09:38:03,287: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:38:03,305: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[a49544fe-9c7c-487e-8e5e-cbf6c29e6684]  
+[2024-04-10 09:38:03,425: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:38:03,473: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:38:03,477: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:38:03,481: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[a49544fe-9c7c-487e-8e5e-cbf6c29e6684] succeeded in 0.1652268349998849s: None
+[2024-04-10 09:38:12,639: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:38:12,644: INFO/MainProcess] Received task: referral.tasks.check_mailings[cd850124-e316-4dca-b84d-cda1fdd0c135]  
+[2024-04-10 09:38:12,651: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:38:12,674: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[cd850124-e316-4dca-b84d-cda1fdd0c135] succeeded in 0.02283004200035066s: None
+[2024-04-10 09:38:33,312: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:38:33,319: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[8c0f436e-09ea-4864-94e4-cc849dd5b0fa]  
+[2024-04-10 09:38:33,388: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:38:33,401: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:38:33,404: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:38:33,412: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[8c0f436e-09ea-4864-94e4-cc849dd5b0fa] succeeded in 0.08103040900004999s: None
+[2024-04-10 09:39:02,649: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:39:02,660: INFO/MainProcess] Received task: referral.tasks.check_mailings[6c24765d-c9f7-4845-b12b-1abee06b6b9d]  
+[2024-04-10 09:39:02,674: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:39:02,729: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[6c24765d-c9f7-4845-b12b-1abee06b6b9d] succeeded in 0.055638105999605614s: None
+[2024-04-10 09:39:03,318: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:39:03,326: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[5c1d3ce3-d07c-4887-924f-aa0fbcef8102]  
+[2024-04-10 09:39:03,475: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:39:03,498: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:39:03,500: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:39:03,501: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[5c1d3ce3-d07c-4887-924f-aa0fbcef8102] succeeded in 0.1729343870001685s: None
+[2024-04-10 09:39:33,439: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:39:33,443: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[95aa40fd-5c35-4e21-8128-8b698c46be9c]  
+[2024-04-10 09:39:33,520: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:39:33,534: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:39:33,535: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:39:33,536: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[95aa40fd-5c35-4e21-8128-8b698c46be9c] succeeded in 0.08481324900003528s: None
+[2024-04-10 09:39:52,656: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:39:52,663: INFO/MainProcess] Received task: referral.tasks.check_mailings[55a853c7-7410-4c1d-9100-958d9008445e]  
+[2024-04-10 09:39:52,668: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:39:52,717: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[55a853c7-7410-4c1d-9100-958d9008445e] succeeded in 0.04942745999960607s: None
+[2024-04-10 09:40:15,973: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:40:15,981: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:40:17,004: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:40:17,039: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:40:17,040: INFO/MainProcess] celery@5a05079870ee ready.
+[2024-04-10 09:40:18,447: INFO/Beat] beat: Starting...
+[2024-04-10 09:40:19,076: INFO/Beat] DatabaseScheduler: Schedule changed.
+[2024-04-10 09:40:19,171: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:40:19,185: INFO/MainProcess] Received task: referral.tasks.check_mailings[faf3081c-39fc-4775-b3d9-e88df6fc2bd0]  
+[2024-04-10 09:40:19,196: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:40:19,221: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[faf3081c-39fc-4775-b3d9-e88df6fc2bd0] succeeded in 0.025479592000010598s: None
+[2024-04-10 09:40:19,251: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:40:19,255: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[058123ae-4001-4ac9-9f81-9e793bbcf27a]  
+[2024-04-10 09:40:19,301: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:40:19,315: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:40:19,316: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:40:19,317: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[058123ae-4001-4ac9-9f81-9e793bbcf27a] succeeded in 0.060992294999778096s: None
+[2024-04-10 09:40:49,257: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:40:49,261: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[6e5b6331-b8cb-4499-bfad-2a3a80799b68]  
+[2024-04-10 09:40:49,336: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:40:49,343: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:40:49,344: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:40:49,345: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[6e5b6331-b8cb-4499-bfad-2a3a80799b68] succeeded in 0.07775015699917276s: None
+[2024-04-10 09:41:09,190: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:41:09,194: INFO/MainProcess] Received task: referral.tasks.check_mailings[2fc5bd56-faae-480d-9d8f-17f17bec7138]  
+[2024-04-10 09:41:09,207: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:41:09,253: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[2fc5bd56-faae-480d-9d8f-17f17bec7138] succeeded in 0.04624910100028501s: None
+[2024-04-10 09:41:19,266: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:41:19,278: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[f14b2eed-81c9-46bc-9b01-eb7757c9d1f5]  
+[2024-04-10 09:41:19,353: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:41:19,362: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:41:19,365: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:41:19,366: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[f14b2eed-81c9-46bc-9b01-eb7757c9d1f5] succeeded in 0.07952456199927838s: None
+[2024-04-10 09:41:49,297: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:41:49,310: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[bb43191a-6b94-4b90-877a-55eaa28f570a]  
+[2024-04-10 09:41:49,649: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:41:49,661: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:41:49,662: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:41:49,665: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[bb43191a-6b94-4b90-877a-55eaa28f570a] succeeded in 0.35336146600002394s: None
+[2024-04-10 09:41:59,211: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:41:59,228: INFO/MainProcess] Received task: referral.tasks.check_mailings[9d2d7d33-1c2b-4406-9e1b-d4730bb25fcf]  
+[2024-04-10 09:41:59,233: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:41:59,265: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[9d2d7d33-1c2b-4406-9e1b-d4730bb25fcf] succeeded in 0.03245688399965729s: None
+[2024-04-10 09:42:19,394: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:42:19,428: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[24ff40dd-f42e-4e73-9862-493a2312e60d]  
+[2024-04-10 09:42:19,559: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:42:19,577: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:42:19,577: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:42:19,578: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[24ff40dd-f42e-4e73-9862-493a2312e60d] succeeded in 0.14114180600063264s: None
+[2024-04-10 09:42:49,246: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:42:49,250: INFO/MainProcess] Received task: referral.tasks.check_mailings[0de092dc-c59a-40a6-ae97-e4545019110d]  
+[2024-04-10 09:42:49,260: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:42:49,306: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[0de092dc-c59a-40a6-ae97-e4545019110d] succeeded in 0.045368203000180074s: None
+[2024-04-10 09:42:49,409: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:42:49,420: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[52234583-3b03-4b10-ad7f-a020f64af0dd]  
+[2024-04-10 09:42:49,485: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:42:49,497: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:42:49,512: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:42:49,521: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[52234583-3b03-4b10-ad7f-a020f64af0dd] succeeded in 0.09371559400005935s: None
+[2024-04-10 09:43:19,519: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:43:19,544: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[b3edaf89-5a76-4c10-ba63-7652879bea24]  
+[2024-04-10 09:43:19,637: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:43:19,664: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:43:19,666: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:43:19,666: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[b3edaf89-5a76-4c10-ba63-7652879bea24] succeeded in 0.1119209749995207s: None
+[2024-04-10 09:43:39,263: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:43:39,266: INFO/MainProcess] Received task: referral.tasks.check_mailings[8f75ebaf-76e4-44b1-9954-189ebfc46820]  
+[2024-04-10 09:43:39,267: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:43:39,307: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[8f75ebaf-76e4-44b1-9954-189ebfc46820] succeeded in 0.040001086000302166s: None
+[2024-04-10 09:43:49,542: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:43:49,546: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[d449a35d-e43e-4f83-875c-a0c97ad4eeb7]  
+[2024-04-10 09:43:49,611: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:43:49,638: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:43:49,646: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:43:49,649: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[d449a35d-e43e-4f83-875c-a0c97ad4eeb7] succeeded in 0.1014909980003722s: None
+[2024-04-10 09:44:19,546: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:44:19,570: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[7db19d29-6f37-45b9-bcba-8786d576e2da]  
+[2024-04-10 09:44:19,642: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:44:19,662: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:44:19,667: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:44:19,671: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[7db19d29-6f37-45b9-bcba-8786d576e2da] succeeded in 0.09718433199941501s: None
+[2024-04-10 09:44:29,283: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:44:29,289: INFO/MainProcess] Received task: referral.tasks.check_mailings[9c4f5298-2a83-467a-8ee6-4b61561f1abb]  
+[2024-04-10 09:44:29,290: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:44:29,309: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[9c4f5298-2a83-467a-8ee6-4b61561f1abb] succeeded in 0.018757462999928975s: None
+[2024-04-10 09:44:49,565: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:44:49,581: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[fae69b12-c047-46ff-aec6-54ad2e788439]  
+[2024-04-10 09:44:49,664: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:44:49,674: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:44:49,677: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:44:49,684: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[fae69b12-c047-46ff-aec6-54ad2e788439] succeeded in 0.09624602300027618s: None
+[2024-04-10 09:45:19,314: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:45:19,342: INFO/MainProcess] Received task: referral.tasks.check_mailings[a7e5c816-3015-4a99-b083-d697f71dd6ad]  
+[2024-04-10 09:45:19,355: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:45:19,389: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[a7e5c816-3015-4a99-b083-d697f71dd6ad] succeeded in 0.033564567000212264s: None
+[2024-04-10 09:45:19,574: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:45:19,608: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[7cf075f1-5b79-4e4e-a2fa-1c6240cd6e99]  
+[2024-04-10 09:45:19,699: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:45:19,719: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:45:19,720: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:45:19,721: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[7cf075f1-5b79-4e4e-a2fa-1c6240cd6e99] succeeded in 0.11064133899981243s: None
+[2024-04-10 09:45:49,587: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:45:49,598: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[dc36f0d1-e24c-4a98-99a9-0e90d71ded85]  
+[2024-04-10 09:45:49,708: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:45:49,753: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:45:49,758: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:45:49,761: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[dc36f0d1-e24c-4a98-99a9-0e90d71ded85] succeeded in 0.14754754999921715s: None
+[2024-04-10 09:46:09,330: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:46:09,335: INFO/MainProcess] Received task: referral.tasks.check_mailings[907fe11e-c138-4674-88c9-feef8f1d43cf]  
+[2024-04-10 09:46:09,337: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:46:09,381: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[907fe11e-c138-4674-88c9-feef8f1d43cf] succeeded in 0.043825328999446356s: None
+[2024-04-10 09:46:19,649: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:46:19,659: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[1f4dae9d-70cc-46e4-b55a-fe9088359ccf]  
+[2024-04-10 09:46:19,738: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:46:19,750: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:46:19,751: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:46:19,751: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[1f4dae9d-70cc-46e4-b55a-fe9088359ccf] succeeded in 0.07866837599976861s: None
+[2024-04-10 09:46:49,650: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:46:49,653: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[e11f5cc4-98cb-4926-9d52-5c63d48b6952]  
+[2024-04-10 09:46:49,687: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:46:49,698: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:46:49,701: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:46:49,702: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[e11f5cc4-98cb-4926-9d52-5c63d48b6952] succeeded in 0.04617612400033977s: None
+[2024-04-10 09:46:59,339: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:46:59,349: INFO/MainProcess] Received task: referral.tasks.check_mailings[b82aa122-63de-4867-88ea-492133851d5c]  
+[2024-04-10 09:46:59,352: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:46:59,385: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[b82aa122-63de-4867-88ea-492133851d5c] succeeded in 0.03326545799973246s: None
+[2024-04-10 09:47:19,672: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:47:19,674: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[df23228e-0466-4b6a-a663-67c10fbe6f04]  
+[2024-04-10 09:47:19,766: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:47:19,774: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:47:19,775: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:47:19,776: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[df23228e-0466-4b6a-a663-67c10fbe6f04] succeeded in 0.09082621599918639s: None
+[2024-04-10 09:47:49,362: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:47:49,367: INFO/MainProcess] Received task: referral.tasks.check_mailings[984cf683-e2f4-4d8e-a2ad-f42261d8d6c6]  
+[2024-04-10 09:47:49,384: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:47:49,416: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[984cf683-e2f4-4d8e-a2ad-f42261d8d6c6] succeeded in 0.031754375999298645s: None
+[2024-04-10 09:47:49,691: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:47:49,695: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[d9abacec-2682-4ea2-83ca-f35344b9d38c]  
+[2024-04-10 09:47:49,773: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:47:49,791: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:47:49,792: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:47:49,794: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[d9abacec-2682-4ea2-83ca-f35344b9d38c] succeeded in 0.08985408599983202s: None
+[2024-04-10 09:48:16,082: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:48:16,128: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:48:17,220: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:48:17,296: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:48:17,314: INFO/MainProcess] celery@32260af9edc1 ready.
+[2024-04-10 09:48:18,955: INFO/Beat] beat: Starting...
+[2024-04-10 09:48:19,298: INFO/Beat] DatabaseScheduler: Schedule changed.
+[2024-04-10 09:48:19,464: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:48:19,492: INFO/MainProcess] Received task: referral.tasks.check_mailings[51f1960c-bfd9-48bd-9802-94b2213c033b]  
+[2024-04-10 09:48:19,503: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:48:19,583: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[51f1960c-bfd9-48bd-9802-94b2213c033b] succeeded in 0.08010391800053185s: None
+[2024-04-10 09:48:19,614: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:48:19,618: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[10963f0a-8b91-46aa-b810-f6778c50ca20]  
+[2024-04-10 09:48:19,729: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:48:19,741: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:48:19,744: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:48:19,745: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[10963f0a-8b91-46aa-b810-f6778c50ca20] succeeded in 0.12333182000111265s: None
+[2024-04-10 09:48:49,626: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:48:49,630: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[83946df6-8311-4bf5-99f3-d22c64bf4c99]  
+[2024-04-10 09:48:49,708: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:48:49,725: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:48:49,726: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:48:49,736: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[83946df6-8311-4bf5-99f3-d22c64bf4c99] succeeded in 0.1030192590005754s: None
+[2024-04-10 09:49:09,456: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:49:09,471: INFO/MainProcess] Received task: referral.tasks.check_mailings[ff00f549-668d-41e7-b1c7-1909b712de1d]  
+[2024-04-10 09:49:09,479: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:49:09,523: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[ff00f549-668d-41e7-b1c7-1909b712de1d] succeeded in 0.043307351999828825s: None
+[2024-04-10 09:49:19,633: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:49:19,644: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[9337ad9a-0dbe-4152-9e0c-438eee572beb]  
+[2024-04-10 09:49:19,700: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:49:19,715: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:49:19,716: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:49:19,722: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[9337ad9a-0dbe-4152-9e0c-438eee572beb] succeeded in 0.06984352199833666s: None
+[2024-04-10 09:49:49,634: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:49:49,637: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[ef38ad74-0771-4a46-95c1-0ec447d6b7ff]  
+[2024-04-10 09:49:49,671: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:49:49,681: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:49:49,682: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:49:49,683: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[ef38ad74-0771-4a46-95c1-0ec447d6b7ff] succeeded in 0.042113597999559715s: None
+[2024-04-10 09:49:59,463: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:49:59,466: INFO/MainProcess] Received task: referral.tasks.check_mailings[b45f87cd-436e-479a-959a-82c0c01a6e8f]  
+[2024-04-10 09:49:59,473: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:49:59,490: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[b45f87cd-436e-479a-959a-82c0c01a6e8f] succeeded in 0.016714790001060464s: None
+[2024-04-10 09:50:19,636: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:50:19,640: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[d327d2ca-c602-4925-be1d-a1c1ed5dee14]  
+[2024-04-10 09:50:19,696: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:50:19,703: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:50:19,705: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:50:19,706: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[d327d2ca-c602-4925-be1d-a1c1ed5dee14] succeeded in 0.06444450799972401s: None
+[2024-04-10 09:50:49,470: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:50:49,473: INFO/MainProcess] Received task: referral.tasks.check_mailings[45de6f98-62c1-48d5-830f-dc51f68bddd4]  
+[2024-04-10 09:50:49,477: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:50:49,493: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[45de6f98-62c1-48d5-830f-dc51f68bddd4] succeeded in 0.016082097999969847s: None
+[2024-04-10 09:50:49,637: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:50:49,640: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[1a70d8d7-4161-4098-b672-49c654e90c69]  
+[2024-04-10 09:50:49,675: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:50:49,683: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:50:49,684: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:50:49,685: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[1a70d8d7-4161-4098-b672-49c654e90c69] succeeded in 0.042927394999423996s: None
+[2024-04-10 09:51:20,187: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:51:20,194: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[424c284d-51bb-470a-a327-d681bc65cf4a]  
+[2024-04-10 09:51:20,252: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:51:20,265: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:51:20,266: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:51:20,267: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[424c284d-51bb-470a-a327-d681bc65cf4a] succeeded in 0.06564001799961261s: None
+[2024-04-10 09:51:39,481: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:51:39,489: INFO/MainProcess] Received task: referral.tasks.check_mailings[c224fd40-59c2-4d24-a916-5270d093deaf]  
+[2024-04-10 09:51:39,491: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:51:39,516: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[c224fd40-59c2-4d24-a916-5270d093deaf] succeeded in 0.02458516899969254s: None
+[2024-04-10 09:51:50,285: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:51:50,289: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[c1933120-13ab-485a-ba0c-0a49df03243f]  
+[2024-04-10 09:51:50,350: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:51:50,358: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:51:50,359: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:51:50,359: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[c1933120-13ab-485a-ba0c-0a49df03243f] succeeded in 0.06824299599975348s: None
+[2024-04-10 09:52:20,291: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:52:20,305: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[e585a0f7-f1c0-4ed5-bd58-cc4d0ba4b4e8]  
+[2024-04-10 09:52:20,365: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:52:20,384: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:52:20,385: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:52:20,386: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[e585a0f7-f1c0-4ed5-bd58-cc4d0ba4b4e8] succeeded in 0.07956587000080617s: None
+[2024-04-10 09:52:29,508: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:52:29,513: INFO/MainProcess] Received task: referral.tasks.check_mailings[51548e75-fe6e-4802-8106-19cb7ea36280]  
+[2024-04-10 09:52:29,517: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:52:29,549: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[51548e75-fe6e-4802-8106-19cb7ea36280] succeeded in 0.03239784499965026s: None
+[2024-04-10 09:52:56,923: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:52:56,960: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:52:58,008: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:52:58,068: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:52:58,074: INFO/MainProcess] celery@93d1bda5dfb0 ready.
+[2024-04-10 09:52:59,943: INFO/Beat] beat: Starting...
+[2024-04-10 09:53:00,756: INFO/Beat] DatabaseScheduler: Schedule changed.
+[2024-04-10 09:53:01,016: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:53:01,063: INFO/MainProcess] Received task: referral.tasks.check_mailings[7ad16afd-08d1-415b-89da-652c479e87f3]  
+[2024-04-10 09:53:01,094: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:53:01,151: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[7ad16afd-08d1-415b-89da-652c479e87f3] succeeded in 0.05727472100079467s: None
+[2024-04-10 09:53:01,275: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:53:01,306: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[ab6e3de4-4f66-4ad5-a346-51e6d7390438]  
+[2024-04-10 09:53:01,422: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:53:01,439: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:53:01,449: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:53:01,450: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[ab6e3de4-4f66-4ad5-a346-51e6d7390438] succeeded in 0.13066971899934288s: None
+[2024-04-10 09:53:31,300: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:53:31,311: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[7370aee1-1a1f-4009-a2d5-a7f1797c7da2]  
+[2024-04-10 09:53:31,381: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:53:31,394: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:53:31,395: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:53:31,396: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[7370aee1-1a1f-4009-a2d5-a7f1797c7da2] succeeded in 0.07501655900159676s: None
+[2024-04-10 09:53:51,020: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:53:51,028: INFO/MainProcess] Received task: referral.tasks.check_mailings[fa3af5be-5b95-44ed-8ae9-454616f55d93]  
+[2024-04-10 09:53:51,036: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:53:51,077: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[fa3af5be-5b95-44ed-8ae9-454616f55d93] succeeded in 0.0413524529994902s: None
+[2024-04-10 09:54:01,332: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:54:01,338: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[457cc14b-da87-4686-b737-eff30763db1f]  
+[2024-04-10 09:54:01,434: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:54:01,451: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:54:01,452: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:54:01,453: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[457cc14b-da87-4686-b737-eff30763db1f] succeeded in 0.10378087699973548s: None
+[2024-04-10 09:54:31,345: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:54:31,354: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[9f9f56a1-4bc5-4bc9-9a49-24ee1ac9def1]  
+[2024-04-10 09:54:31,421: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:54:31,444: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:54:31,446: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:54:31,458: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[9f9f56a1-4bc5-4bc9-9a49-24ee1ac9def1] succeeded in 0.1000893359996553s: None
+[2024-04-10 09:54:41,022: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:54:41,039: INFO/MainProcess] Received task: referral.tasks.check_mailings[4fb15287-fae5-4e8f-9712-21c0fd1b69d3]  
+[2024-04-10 09:54:41,041: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:54:41,063: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[4fb15287-fae5-4e8f-9712-21c0fd1b69d3] succeeded in 0.022030236999853514s: None
+[2024-04-10 09:55:01,357: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:55:01,369: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[199bb806-090e-4b21-856e-7db5d9d99680]  
+[2024-04-10 09:55:01,498: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:55:01,516: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:55:01,526: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:55:01,529: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[199bb806-090e-4b21-856e-7db5d9d99680] succeeded in 0.1555592290005734s: None
+[2024-04-10 09:55:31,033: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:55:31,042: INFO/MainProcess] Received task: referral.tasks.check_mailings[9e44fb61-f582-4720-a721-c69b94ced280]  
+[2024-04-10 09:55:31,057: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:55:31,087: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[9e44fb61-f582-4720-a721-c69b94ced280] succeeded in 0.03004610199968738s: None
+[2024-04-10 09:55:31,370: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:55:31,378: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[4256c3e5-6802-4dc6-b2de-44668fa82b23]  
+[2024-04-10 09:55:31,432: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:55:31,447: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:55:31,452: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:55:31,453: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[4256c3e5-6802-4dc6-b2de-44668fa82b23] succeeded in 0.06746324399864534s: None
+[2024-04-10 09:56:02,102: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:56:02,106: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[cdb1c6dd-e85e-4040-93af-8383749c0172]  
+[2024-04-10 09:56:02,154: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:56:02,169: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:56:02,170: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:56:02,170: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[cdb1c6dd-e85e-4040-93af-8383749c0172] succeeded in 0.06302575799963961s: None
+[2024-04-10 09:56:21,078: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:56:21,093: INFO/MainProcess] Received task: referral.tasks.check_mailings[9bca6457-908a-41ad-afcb-4b4c2880cca9]  
+[2024-04-10 09:56:21,100: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:56:21,157: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[9bca6457-908a-41ad-afcb-4b4c2880cca9] succeeded in 0.05720756099981372s: None
+[2024-04-10 09:56:32,114: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:56:32,129: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[89eb583d-6059-4bb2-9b98-0520abf7cb7b]  
+[2024-04-10 09:56:32,213: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:56:32,246: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:56:32,254: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:56:32,257: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[89eb583d-6059-4bb2-9b98-0520abf7cb7b] succeeded in 0.12292105199958314s: None
+[2024-04-10 09:57:02,149: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:57:02,159: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[5fe362d9-a51f-466f-97c0-9ce201d890bb]  
+[2024-04-10 09:57:02,259: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:57:02,266: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:57:02,280: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:57:02,281: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[5fe362d9-a51f-466f-97c0-9ce201d890bb] succeeded in 0.12053895999997621s: None
+[2024-04-10 09:57:11,083: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:57:11,086: INFO/MainProcess] Received task: referral.tasks.check_mailings[0dcee927-7f94-4ad1-9f8e-17c5260af822]  
+[2024-04-10 09:57:11,977: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:57:12,061: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[0dcee927-7f94-4ad1-9f8e-17c5260af822] succeeded in 0.08407960499971523s: None
+[2024-04-10 09:57:32,161: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:57:32,170: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[61a2fa3e-b7c9-45d6-8449-77897edd86d4]  
+[2024-04-10 09:57:32,235: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:57:32,250: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:57:32,254: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:57:32,255: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[61a2fa3e-b7c9-45d6-8449-77897edd86d4] succeeded in 0.08139111199852778s: None
+[2024-04-10 09:58:01,093: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:58:01,106: INFO/MainProcess] Received task: referral.tasks.check_mailings[6fc9e8e1-cf28-4b7d-a43c-1a9b1f3a1665]  
+[2024-04-10 09:58:01,111: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:58:01,172: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[6fc9e8e1-cf28-4b7d-a43c-1a9b1f3a1665] succeeded in 0.06117608099884819s: None
+[2024-04-10 09:58:02,167: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:58:02,184: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[8002e283-8786-4141-92c5-f969e94d7e21]  
+[2024-04-10 09:58:02,253: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:58:02,273: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:58:02,276: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:58:02,277: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[8002e283-8786-4141-92c5-f969e94d7e21] succeeded in 0.07805138199910289s: None
+[2024-04-10 09:58:32,175: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:58:32,180: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[86397476-7fa2-423c-abef-dc1afd1e0a45]  
+[2024-04-10 09:58:32,222: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:58:32,235: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:58:32,236: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:58:32,237: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[86397476-7fa2-423c-abef-dc1afd1e0a45] succeeded in 0.05256917699989572s: None
+[2024-04-10 09:58:51,116: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:58:51,133: INFO/MainProcess] Received task: referral.tasks.check_mailings[4c335465-f7d7-4760-b3a4-7f72b4a34747]  
+[2024-04-10 09:58:51,142: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:58:51,178: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[4c335465-f7d7-4760-b3a4-7f72b4a34747] succeeded in 0.035487518000081764s: None
+[2024-04-10 09:59:02,280: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:59:02,295: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[923d5b23-7c42-44f5-a036-e0c10c09b52a]  
+[2024-04-10 09:59:02,379: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:59:02,409: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:59:02,411: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:59:02,419: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[923d5b23-7c42-44f5-a036-e0c10c09b52a] succeeded in 0.11905627400119556s: None
+[2024-04-10 09:59:32,289: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:59:32,300: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[5bcfcf5d-d2b0-4ce5-8646-146575dc28c6]  
+[2024-04-10 09:59:32,361: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:59:32,373: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:59:32,376: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:59:32,381: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[5bcfcf5d-d2b0-4ce5-8646-146575dc28c6] succeeded in 0.07997775500007265s: None
+[2024-04-10 09:59:49,168: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 09:59:49,204: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 09:59:50,259: INFO/MainProcess] mingle: all alone
+[2024-04-10 09:59:50,333: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 09:59:50,336: INFO/MainProcess] celery@c15017729f0c ready.
+[2024-04-10 09:59:51,793: INFO/Beat] beat: Starting...
+[2024-04-10 09:59:52,611: INFO/Beat] DatabaseScheduler: Schedule changed.
+[2024-04-10 09:59:52,781: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 09:59:52,823: INFO/MainProcess] Received task: referral.tasks.check_mailings[f8a6140c-defa-4095-ab3d-e1d47da2df8e]  
+[2024-04-10 09:59:52,828: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 09:59:52,890: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[f8a6140c-defa-4095-ab3d-e1d47da2df8e] succeeded in 0.062156812000466743s: None
+[2024-04-10 09:59:52,944: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 09:59:52,950: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[1ca4455b-2157-4adf-b356-428b43908b6d]  
+[2024-04-10 09:59:53,027: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 09:59:53,044: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 09:59:53,045: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 09:59:53,045: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[1ca4455b-2157-4adf-b356-428b43908b6d] succeeded in 0.08601825699952315s: None
+[2024-04-10 10:00:00,020: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:00:00,024: INFO/MainProcess] Received task: referral.tasks.remind_notify[140a4e03-0cc1-4c45-b7df-d77901eaa7d1]  
+[2024-04-10 10:00:00,068: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:00:00,099: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[140a4e03-0cc1-4c45-b7df-d77901eaa7d1] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:00:22,951: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:00:22,965: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[48988ac6-e288-4429-9163-d5f508d0ee13]  
+[2024-04-10 10:00:23,038: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:00:23,054: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:00:23,058: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:00:23,066: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[48988ac6-e288-4429-9163-d5f508d0ee13] succeeded in 0.09533799599921622s: None
+[2024-04-10 10:00:42,777: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:00:42,780: INFO/MainProcess] Received task: referral.tasks.check_mailings[f662f185-c3da-4d5e-80e8-35e53a0b4862]  
+[2024-04-10 10:00:42,786: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:00:42,820: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[f662f185-c3da-4d5e-80e8-35e53a0b4862] succeeded in 0.03383308500087878s: None
+[2024-04-10 10:00:52,952: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:00:52,955: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[43248c4a-2b2a-4ccf-9857-06e06049dcc0]  
+[2024-04-10 10:00:52,994: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:00:53,005: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:00:53,006: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:00:53,006: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[43248c4a-2b2a-4ccf-9857-06e06049dcc0] succeeded in 0.04823683199902007s: None
+[2024-04-10 10:01:00,003: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:01:00,013: INFO/MainProcess] Received task: referral.tasks.remind_notify[5b0366a1-9e87-428a-ace9-7ee749157993]  
+[2024-04-10 10:01:00,034: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:01:00,039: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[5b0366a1-9e87-428a-ace9-7ee749157993] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:01:22,959: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:01:22,965: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[b35b195b-fe6c-4562-b0d9-15a93832167a]  
+[2024-04-10 10:01:23,048: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:01:23,064: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:01:23,065: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:01:23,066: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[b35b195b-fe6c-4562-b0d9-15a93832167a] succeeded in 0.09029880900015996s: None
+[2024-04-10 10:01:32,785: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:01:32,788: INFO/MainProcess] Received task: referral.tasks.check_mailings[5d11069f-3d1d-46ab-8ad0-f944375327fb]  
+[2024-04-10 10:01:32,790: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:01:32,804: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[5d11069f-3d1d-46ab-8ad0-f944375327fb] succeeded in 0.013977222999528749s: None
+[2024-04-10 10:01:52,965: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:01:52,971: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[726bde01-7c9c-47fa-a5a7-7a53d28e02fa]  
+[2024-04-10 10:01:53,023: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:01:53,036: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:01:53,038: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:01:53,039: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[726bde01-7c9c-47fa-a5a7-7a53d28e02fa] succeeded in 0.0654182510006649s: None
+[2024-04-10 10:02:00,014: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:02:00,046: INFO/MainProcess] Received task: referral.tasks.remind_notify[7b593935-393b-4bec-9922-a0f5b92791c7]  
+[2024-04-10 10:02:00,088: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:02:00,105: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[7b593935-393b-4bec-9922-a0f5b92791c7] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:02:22,802: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:02:22,819: INFO/MainProcess] Received task: referral.tasks.check_mailings[1c5b7d7d-f384-49d5-8188-6ae5ec74b7a4]  
+[2024-04-10 10:02:22,821: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:02:22,848: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[1c5b7d7d-f384-49d5-8188-6ae5ec74b7a4] succeeded in 0.02690324899958796s: None
+[2024-04-10 10:02:22,983: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:02:22,992: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[b62a63e6-9cd1-4f1d-9d6b-0883b9a6dd1a]  
+[2024-04-10 10:02:23,070: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:02:23,091: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:02:23,113: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:02:23,114: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[b62a63e6-9cd1-4f1d-9d6b-0883b9a6dd1a] succeeded in 0.11766530299973965s: None
+[2024-04-10 10:02:53,106: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:02:53,134: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[54e40d6b-e895-449c-8245-2c25603ee7c1]  
+[2024-04-10 10:02:53,195: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:02:53,211: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:02:53,213: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:02:53,214: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[54e40d6b-e895-449c-8245-2c25603ee7c1] succeeded in 0.07328033600060735s: None
+[2024-04-10 10:03:00,003: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:03:00,013: INFO/MainProcess] Received task: referral.tasks.remind_notify[a67c59ab-c94f-4414-b76f-e9f4cc9db497]  
+[2024-04-10 10:03:00,037: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:03:00,059: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[a67c59ab-c94f-4414-b76f-e9f4cc9db497] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:03:12,836: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:03:12,857: INFO/MainProcess] Received task: referral.tasks.check_mailings[5f5c1e51-da38-4875-a445-581dbeb830d2]  
+[2024-04-10 10:03:12,867: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:03:12,907: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[5f5c1e51-da38-4875-a445-581dbeb830d2] succeeded in 0.03843163300007291s: None
+[2024-04-10 10:03:23,121: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:03:23,127: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[333e28b9-a857-41ba-9e25-9dbe0204c0c0]  
+[2024-04-10 10:03:23,186: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:03:23,196: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:03:23,199: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:03:23,205: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[333e28b9-a857-41ba-9e25-9dbe0204c0c0] succeeded in 0.07335588299974916s: None
+[2024-04-10 10:03:48,348: INFO/MainProcess] Connected to redis://:**@redis:6379/3
+[2024-04-10 10:03:48,378: INFO/MainProcess] mingle: searching for neighbors
+[2024-04-10 10:03:49,426: INFO/MainProcess] mingle: all alone
+[2024-04-10 10:03:49,532: WARNING/MainProcess] /usr/local/lib/python3.10/site-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+[2024-04-10 10:03:49,535: INFO/MainProcess] celery@8cdd0477be50 ready.
+[2024-04-10 10:03:51,247: INFO/Beat] beat: Starting...
+[2024-04-10 10:03:51,556: INFO/Beat] DatabaseScheduler: Schedule changed.
+[2024-04-10 10:03:51,741: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:03:51,764: INFO/MainProcess] Received task: referral.tasks.remind_notify[11d2c3b5-0e26-4e0e-90a4-072ed245929f]  
+[2024-04-10 10:03:51,831: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:03:51,850: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[11d2c3b5-0e26-4e0e-90a4-072ed245929f] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:03:51,871: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:03:51,882: INFO/MainProcess] Received task: referral.tasks.check_mailings[ec1134a1-c46c-4a05-a084-2de0913a83d5]  
+[2024-04-10 10:03:51,907: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:03:51,919: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:03:51,932: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[ffc9fc1f-7d84-40cb-9799-0d7523ab2c77]  
+[2024-04-10 10:03:51,935: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[ec1134a1-c46c-4a05-a084-2de0913a83d5] succeeded in 0.028351208000458428s: None
+[2024-04-10 10:03:52,008: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:03:52,016: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:03:52,019: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:03:52,020: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[ffc9fc1f-7d84-40cb-9799-0d7523ab2c77] succeeded in 0.08098666800106002s: None
+[2024-04-10 10:04:00,017: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:04:00,021: INFO/MainProcess] Received task: referral.tasks.remind_notify[58308c3d-a241-4b7d-bd35-ce9be5c7a747]  
+[2024-04-10 10:04:00,066: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:04:00,077: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[58308c3d-a241-4b7d-bd35-ce9be5c7a747] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:04:21,932: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:04:21,942: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[f3b582d2-5c4b-41cb-bbb8-37a6e57dc4b5]  
+[2024-04-10 10:04:22,000: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:04:22,017: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:04:22,018: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:04:22,019: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[f3b582d2-5c4b-41cb-bbb8-37a6e57dc4b5] succeeded in 0.0736408009997831s: None
+[2024-04-10 10:04:41,879: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:04:41,942: INFO/MainProcess] Received task: referral.tasks.check_mailings[1cafafba-7bd0-41c9-992d-e5e715773193]  
+[2024-04-10 10:04:41,992: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:04:42,015: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[1cafafba-7bd0-41c9-992d-e5e715773193] succeeded in 0.02302051199876587s: None
+[2024-04-10 10:04:51,936: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:04:51,939: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[d7833e60-c298-4dcc-9af3-050231c10985]  
+[2024-04-10 10:04:52,009: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:04:52,023: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:04:52,024: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:04:52,025: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[d7833e60-c298-4dcc-9af3-050231c10985] succeeded in 0.07773583299967868s: None
+[2024-04-10 10:05:00,012: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:05:00,021: INFO/MainProcess] Received task: referral.tasks.remind_notify[07f8959a-0445-4f73-8880-9e715c4f6a43]  
+[2024-04-10 10:05:00,055: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:05:00,072: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[07f8959a-0445-4f73-8880-9e715c4f6a43] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:05:21,959: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:05:22,042: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[b3781a02-e803-4df8-b5d9-fc63dac32bde]  
+[2024-04-10 10:05:22,110: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:05:22,132: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:05:22,136: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:05:22,217: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[b3781a02-e803-4df8-b5d9-fc63dac32bde] succeeded in 0.15535601200099336s: None
+[2024-04-10 10:05:31,914: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:05:31,916: INFO/MainProcess] Received task: referral.tasks.check_mailings[f708c347-55c0-49df-a5ce-973b7ff8c0ee]  
+[2024-04-10 10:05:31,926: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:05:31,994: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[f708c347-55c0-49df-a5ce-973b7ff8c0ee] succeeded in 0.07302291700034402s: None
+[2024-04-10 10:05:51,970: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:05:51,983: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[d9ea49d1-0b82-4839-9bfc-ccc306eb45c5]  
+[2024-04-10 10:05:52,066: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:05:52,083: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:05:52,085: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:05:52,096: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[d9ea49d1-0b82-4839-9bfc-ccc306eb45c5] succeeded in 0.10683404300107213s: None
+[2024-04-10 10:06:00,020: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:06:00,033: INFO/MainProcess] Received task: referral.tasks.remind_notify[30829de7-9a5e-47cd-9126-fba51bc9afbd]  
+[2024-04-10 10:06:00,067: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:06:00,089: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[30829de7-9a5e-47cd-9126-fba51bc9afbd] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:06:21,932: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:06:21,937: INFO/MainProcess] Received task: referral.tasks.check_mailings[5f7b2a24-c930-442d-b91c-894eb8d892ff]  
+[2024-04-10 10:06:21,977: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:06:21,945: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:06:21,983: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[a18c4aa6-ccae-4666-a404-c38b4bbb60c5]  
+[2024-04-10 10:06:22,040: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[5f7b2a24-c930-442d-b91c-894eb8d892ff] succeeded in 0.09587623699917458s: None
+[2024-04-10 10:06:22,136: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:06:22,160: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:06:22,173: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:06:22,178: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[a18c4aa6-ccae-4666-a404-c38b4bbb60c5] succeeded in 0.1178562029999739s: None
+[2024-04-10 10:06:52,142: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:06:52,160: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[a9f5835f-a0b6-4a03-9bab-95b87f30dc24]  
+[2024-04-10 10:06:52,282: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:06:52,297: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:06:52,309: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:06:52,311: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[a9f5835f-a0b6-4a03-9bab-95b87f30dc24] succeeded in 0.11685933100125112s: None
+[2024-04-10 10:07:00,002: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:07:00,079: INFO/MainProcess] Received task: referral.tasks.remind_notify[74baa9aa-079a-4a26-bb6c-98e2b8574ac7]  
+[2024-04-10 10:07:00,662: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:07:00,981: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[74baa9aa-079a-4a26-bb6c-98e2b8574ac7] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:07:11,937: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:07:11,940: INFO/MainProcess] Received task: referral.tasks.check_mailings[b9a94f77-3db3-4908-b422-44f8720a8187]  
+[2024-04-10 10:07:11,952: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:07:11,991: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[b9a94f77-3db3-4908-b422-44f8720a8187] succeeded in 0.038937900000746595s: None
+[2024-04-10 10:07:22,164: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:07:22,177: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[e828b235-3215-41e0-87a6-5c28fcdbfe4a]  
+[2024-04-10 10:07:22,256: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:07:22,280: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:07:22,288: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:07:22,289: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[e828b235-3215-41e0-87a6-5c28fcdbfe4a] succeeded in 0.1022513190000609s: None
+[2024-04-10 10:07:52,189: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:07:52,203: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[d4e76459-d9dc-4af6-9359-f15049bc7f1d]  
+[2024-04-10 10:07:52,267: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:07:52,282: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:07:52,283: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:07:52,285: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[d4e76459-d9dc-4af6-9359-f15049bc7f1d] succeeded in 0.07617471999947156s: None
+[2024-04-10 10:08:00,018: INFO/Beat] Scheduler: Sending due task referral.tasks.remind_notify() (referral.tasks.remind_notify)
+[2024-04-10 10:08:00,029: INFO/MainProcess] Received task: referral.tasks.remind_notify[34bea3ef-7adb-4322-a2a8-2692485a4d2a]  
+[2024-04-10 10:08:00,056: WARNING/ForkPoolWorker-2] 0
+[2024-04-10 10:08:00,062: ERROR/ForkPoolWorker-2] Task referral.tasks.remind_notify[34bea3ef-7adb-4322-a2a8-2692485a4d2a] raised unexpected: AttributeError("'NoneType' object has no attribute 'message_1'")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 405, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/usr/local/lib/python3.10/site-packages/celery/app/trace.py", line 697, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/app/core/referral/tasks.py", line 61, in remind_notify
+    message = CabinetSettings.objects.last().message_1
+AttributeError: 'NoneType' object has no attribute 'message_1'
+[2024-04-10 10:08:01,940: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:08:01,951: INFO/MainProcess] Received task: referral.tasks.check_mailings[81558456-4a11-47a9-ae0b-945fb3fd79bd]  
+[2024-04-10 10:08:01,954: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:08:01,980: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[81558456-4a11-47a9-ae0b-945fb3fd79bd] succeeded in 0.025459187001615646s: None
+[2024-04-10 10:08:22,218: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:08:22,222: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[be4e695c-d86b-40d2-91b8-9adec05ceb6d]  
+[2024-04-10 10:08:22,300: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:08:22,323: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:08:22,328: WARNING/ForkPoolWorker-2] check_revision_orders >> no data
+[2024-04-10 10:08:22,336: INFO/ForkPoolWorker-2] Task dispatcher.tasks.check_revision_orders[be4e695c-d86b-40d2-91b8-9adec05ceb6d] succeeded in 0.11299561099986022s: None
+[2024-04-10 10:08:51,946: INFO/Beat] Scheduler: Sending due task referral.tasks.check_mailings() (referral.tasks.check_mailings)
+[2024-04-10 10:08:51,961: INFO/MainProcess] Received task: referral.tasks.check_mailings[c34b5998-a947-48c5-b6d2-0bddf3d47fa6]  
+[2024-04-10 10:08:51,968: WARNING/ForkPoolWorker-2] Проверка рассылок
+[2024-04-10 10:08:51,987: INFO/ForkPoolWorker-2] Task referral.tasks.check_mailings[c34b5998-a947-48c5-b6d2-0bddf3d47fa6] succeeded in 0.01910100799977954s: None
+[2024-04-10 10:08:52,227: INFO/Beat] Scheduler: Sending due task dispatcher.tasks.check_revision_orders() (dispatcher.tasks.check_revision_orders)
+[2024-04-10 10:08:52,234: INFO/MainProcess] Received task: dispatcher.tasks.check_revision_orders[91c2bd63-6098-4b77-a777-4b6f121b19e9]  
+[2024-04-10 10:08:52,315: WARNING/ForkPoolWorker-2] check_revision_orders >> revisions=<QuerySet []>
+[2024-04-10 10:08:52,346: WARNING/ForkPoolWorker-2] check_revision_orders >> len(success)=0 len(failed)=0
+[2024-04-10 10:08:52,348: WARNING/ForkPoolWorker-2] check_revision_orders >> no data

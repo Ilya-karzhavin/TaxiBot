@@ -5622,3 +5622,45 @@ WARNING [2023-09-30 13:42:07,320] log 53 139798086317888 Bad Request: /api/users
 WARNING [2023-09-30 13:57:40,942] log 53 139798086317888 Not Found: /api/orders/getClientActiveOrder/
 WARNING [2023-09-30 14:00:08,231] log 53 139798086317888 Not Found: /
 INFO [2023-12-21 15:27:24,188] autoreload 14265 140013446852608 Watching for file changes with StatReloader
+INFO [2024-04-10 09:36:42,439] autoreload 16 140281487198016 Watching for file changes with StatReloader
+INFO [2024-04-10 09:40:26,482] autoreload 16 140232885946176 Watching for file changes with StatReloader
+WARNING [2024-04-10 09:40:43,630] log 16 140232666449664 Not Found: /
+WARNING [2024-04-10 09:40:43,631] basehttp 16 140232666449664 "GET / HTTP/1.1" 404 2407
+WARNING [2024-04-10 09:40:46,563] log 16 140232666449664 Not Found: /favicon.ico
+WARNING [2024-04-10 09:40:46,567] basehttp 16 140232666449664 "GET /favicon.ico HTTP/1.1" 404 2458
+INFO [2024-04-10 09:48:34,076] autoreload 17 140045163730752 Watching for file changes with StatReloader
+INFO [2024-04-10 09:53:19,762] autoreload 16 139705373730624 Watching for file changes with StatReloader
+WARNING [2024-04-10 09:55:15,728] log 16 139705085589248 Forbidden: /api/users/getUserExtended/
+WARNING [2024-04-10 09:55:15,728] basehttp 16 139705085589248 "POST /api/users/getUserExtended/ HTTP/1.1" 403 66
+WARNING [2024-04-10 09:55:18,755] log 16 139705085589248 Forbidden: /api/users/getUserExtended/
+WARNING [2024-04-10 09:55:18,765] basehttp 16 139705085589248 "POST /api/users/getUserExtended/ HTTP/1.1" 403 66
+WARNING [2024-04-10 09:55:22,827] log 16 139705085589248 Forbidden: /api/users/getUserExtended/
+WARNING [2024-04-10 09:55:22,828] basehttp 16 139705085589248 "POST /api/users/getUserExtended/ HTTP/1.1" 403 66
+WARNING [2024-04-10 09:55:24,493] log 16 139705085589248 Forbidden: /api/users/getUserExtended/
+WARNING [2024-04-10 09:55:24,505] basehttp 16 139705085589248 "POST /api/users/getUserExtended/ HTTP/1.1" 403 66
+WARNING [2024-04-10 09:55:26,004] log 16 139705085589248 Forbidden: /api/users/getUserExtended/
+WARNING [2024-04-10 09:55:26,007] basehttp 16 139705085589248 "POST /api/users/getUserExtended/ HTTP/1.1" 403 66
+WARNING [2024-04-10 09:55:27,420] log 16 139705085589248 Forbidden: /api/users/getUserExtended/
+WARNING [2024-04-10 09:55:27,421] basehttp 16 139705085589248 "POST /api/users/getUserExtended/ HTTP/1.1" 403 66
+WARNING [2024-04-10 09:55:58,887] log 16 139705085589248 Forbidden: /api/users/getUserExtended/
+WARNING [2024-04-10 09:55:58,896] basehttp 16 139705085589248 "POST /api/users/getUserExtended/ HTTP/1.1" 403 66
+WARNING [2024-04-10 09:56:10,862] log 16 139705077196544 Not Found: /
+WARNING [2024-04-10 09:56:10,867] basehttp 16 139705077196544 "GET / HTTP/1.1" 404 2407
+WARNING [2024-04-10 09:56:15,319] log 16 139705085589248 Forbidden: /api/users/getUserExtended/
+WARNING [2024-04-10 09:56:15,331] basehttp 16 139705085589248 "POST /api/users/getUserExtended/ HTTP/1.1" 403 66
+INFO [2024-04-10 10:00:08,010] autoreload 16 140178480277312 Watching for file changes with StatReloader
+INFO [2024-04-10 10:04:09,540] autoreload 15 140152040515392 Watching for file changes with StatReloader
+WARNING [2024-04-10 10:04:17,342] log 15 140151754319616 Bad Request: /api/users/getUserExtended/
+WARNING [2024-04-10 10:04:17,343] basehttp 15 140151754319616 "POST /api/users/getUserExtended/ HTTP/1.1" 400 29
+WARNING [2024-04-10 10:04:20,065] log 15 140151754319616 Bad Request: /api/users/getUserFromTelegram/
+WARNING [2024-04-10 10:04:20,065] basehttp 15 140151754319616 "POST /api/users/getUserFromTelegram/ HTTP/1.1" 400 29
+INFO [2024-04-10 10:04:20,990] basehttp 15 140151754319616 "POST /api/users/registerFromTelegram/ HTTP/1.1" 201 671
+INFO [2024-04-10 10:05:22,881] basehttp 15 140151754319616 "POST /api/users/getUserFromTelegram/ HTTP/1.1" 200 671
+INFO [2024-04-10 10:05:30,948] basehttp 15 140151754319616 "POST /api/users/getUserFromTelegram/ HTTP/1.1" 200 671
+INFO [2024-04-10 10:05:31,063] basehttp 15 140151754319616 "PATCH /api/users/updateUser/3/ HTTP/1.1" 200 697
+INFO [2024-04-10 10:05:31,494] basehttp 15 140151754319616 "POST /api/users/getUserExtended/ HTTP/1.1" 200 692
+INFO [2024-04-10 10:05:33,174] basehttp 15 140151754319616 "POST /api/users/getUserFromTelegram/ HTTP/1.1" 200 681
+WARNING [2024-04-10 10:06:09,455] log 15 140151754319616 Bad Request: /api/users/registerDriver/
+WARNING [2024-04-10 10:06:09,467] basehttp 15 140151754319616 "POST /api/users/registerDriver/ HTTP/1.1" 400 126
+INFO [2024-04-10 10:07:44,736] autoreload 15 140152040515392 /app/core/cabinet/models.py changed, reloading.
+INFO [2024-04-10 10:07:50,546] autoreload 22 140185558185792 Watching for file changes with StatReloader
