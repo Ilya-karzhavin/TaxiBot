@@ -3,7 +3,7 @@ from dadata import Dadata
 from data.config import DADATA_TOKEN
 from aiogram.types import Location
 from numpy import sin, cos, arccos, pi, round
-
+import geocoder
 dadata = Dadata(DADATA_TOKEN)
 
 
@@ -13,8 +13,8 @@ async def get_autocompletion_inline_results(base_address, location=None):
 
     for i, address in enumerate(addresses):
         title = await get_str_address_from_dadata_result(address)
-        data = address.get("data", {})
-        geo_lat, geo_lon = (data.get("geo_lat"), data.get("geo_lon"))
+        data = address
+        geo_lat, geo_lon = (data.get("lat"), data.get("lon"))
         if title and geo_lat and geo_lon:
             results.append(
                 InlineQueryResultArticle(
@@ -23,7 +23,7 @@ async def get_autocompletion_inline_results(base_address, location=None):
                     input_message_content=InputLocationMessageContent(
                         latitude=float(geo_lat), longitude=float(geo_lon)
                     ),
-                    description=address.get("value") + f"Sity: {data.get('city')}",
+                    description=address.get("value") + f"Sity: {data.get('state')}",
                 )
             )
 
@@ -31,27 +31,12 @@ async def get_autocompletion_inline_results(base_address, location=None):
 
 
 async def autocompletion_address(base_address, location=None):
-    result = dadata.suggest("address", base_address)
+    result = geocoder.osm(f"{base_address}, Азербайджан", maxRows=5)
     return result
 
 
 async def get_str_address_from_dadata_result(result):
-    data = result.get("data")
-    string = []
-    city = data.get("settlement", data.get("city"))
-    street = data.get("street", "")
-    house = data.get("house", "")
-
-    if city:
-        string.append(city)
-        if street:
-            string.append(street)
-        if house:
-            string.append(house)
-    else:
-        return result.get("value")
-
-    return ", ".join(string)
+    return result['display_name']
 
 
 async def get_sity_from_location(location: Location):
