@@ -59,7 +59,7 @@ async def post_request(
         response = await session.post(url, data=req)
     print(f"{json_data=}")
     # Возвращаем ответ
-    await check_response(response)
+    await check_response(response, json_data)
     return response
 
 
@@ -106,13 +106,13 @@ async def get_request(
     return response
 
 
-async def check_response(response: aiohttp.ClientResponse) -> bool:
+async def check_response(response: aiohttp.ClientResponse, json_data) -> bool:
     """
         Проверяет запрос, если вдруг статус плохой, выдает ошибку
     :param response:
     :return:
     """
-    logger.info(f"<Response status {response.status}>")
+    logger.info(f"<Response status {response.status}, {json_data}>")
 
     await parse_response_errors(response)
     if response.status in range(200, 301):
