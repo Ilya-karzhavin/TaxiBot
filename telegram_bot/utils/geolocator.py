@@ -12,8 +12,15 @@ dadata = Dadata(DADATA_TOKEN)
 async def get_autocompletion_inline_results(base_address, location=None):
     results = []
     addresses = await autocompletion_address(base_address, location=location)
-
+    print(addresses, type(addresses))
+    if addresses is None:
+        return []
+    if type(addresses) == dict:
+        addresses = [addresses]
     for i, address in enumerate(addresses):
+        print(f"{address=}")
+        address = address["raw"]
+     #   raise Exception(address, type(address))
         title = await get_str_address_from_dadata_result(address)
         data = address
         geo_lat, geo_lon = (data.get("lat"), data.get("lon"))
@@ -25,7 +32,7 @@ async def get_autocompletion_inline_results(base_address, location=None):
                     input_message_content=InputLocationMessageContent(
                         latitude=float(geo_lat), longitude=float(geo_lon)
                     ),
-                    description=address.get("value") + f"Sity: {data.get('state')}",
+                    description=address.get("value", "") + f"Sity: {data.get('state')}",
                 )
             )
 
@@ -33,8 +40,13 @@ async def get_autocompletion_inline_results(base_address, location=None):
 
 
 async def autocompletion_address(base_address, location=None):
-    result = geocoder.osm(f"{base_address}, Азербайджан", maxRows=5)
-    return result
+    result = geocoder.osm(f"{base_address}", maxRows=5)
+    return result.json
+
+
+async def get_str_address_from_dadata_result(result):
+
+    return result['display_name']
 
 
 async def get_str_address_from_dadata_result(result):
