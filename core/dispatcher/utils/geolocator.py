@@ -98,7 +98,7 @@ def get_address_by_location(location: Location) -> Address:
         raise CityNotFound
 
     # Получаем уникальный идентификатор города в БД Nominatim
-    place_id = int(data["kladr_id"])
+    # place_id = int(data["place_id"])
 
     # Получаем название города, иногда она хранится в `city`, иногда в `town`
     city_name = data.get("town") or data.get("city")
