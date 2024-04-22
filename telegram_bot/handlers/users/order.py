@@ -343,7 +343,7 @@ async def address_inline_handler(inline_query: types.InlineQuery, state: FSMCont
     print('queiry_comm')
     results = await get_autocompletion_inline_results(inline_query.query)
     print('queiry_comm')
-    cache_time = 0
+    cache_time = 1000
     await bot.answer_inline_query(
         inline_query.id, results=results, cache_time=cache_time
     )
