@@ -6,6 +6,7 @@ from data.config import DADATA_TOKEN
 from aiogram.types import Location
 from numpy import sin, cos, arccos, pi, round
 import geocoder
+import aiohttp
 dadata = Dadata(DADATA_TOKEN)
 
 
@@ -39,7 +40,9 @@ async def get_autocompletion_inline_results(base_address, location=None):
 
 
 async def autocompletion_address(base_address, location=None):
-    result = requests.get(f"https://nominatim.openstreetmap.org/search.php?q={base_address}&format=jsonv2").json()
+    async with aiohttp.ClientSession() as session:
+        async with session.get("https://nominatim.openstreetmap.org/search.php?q={base_address}&format=jsonv2") as response:
+            result = response.json()
     return result
 
 
@@ -53,7 +56,9 @@ async def get_str_address_from_dadata_result(result):
 
 
 async def get_sity_from_location(location: Location):
-    data = requests.get(f"https://nominatim.openstreetmap.org/reverse?format=json&lat={location.latitude}&lon={location.longitude}").json()
+    async with aiohttp.ClientSession() as session:
+        async with session.get("https://nominatim.openstreetmap.org/reverse?format=json&lat={location.latitude}&lon={location.longitude}") as response:
+            data = response.json()
     pprint.pprint(data)
     if data.get('raw'):
         if data.get('address'):
