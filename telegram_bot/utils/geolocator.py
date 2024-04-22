@@ -1,3 +1,5 @@
+import pprint
+import requests
 from aiogram.types import InlineQueryResultArticle, InputLocationMessageContent
 from dadata import Dadata
 from data.config import DADATA_TOKEN
@@ -40,13 +42,13 @@ async def get_str_address_from_dadata_result(result):
 
 
 async def get_sity_from_location(location: Location):
-    data = dadata.geolocate(name="address", lon=location.longitude, lat=location.latitude)[0].get('data')
-    if data.get('city'):
-        return data['city']
-    elif data.get('settlement'):
-        return data['settlement']
-    else:
-        return ""
+    data = requests.get(f"https://nominatim.openstreetmap.org/reverse?format=json&lat={location[0]}&lon={location[1]}")
+    pprint.pprint(data)
+    if data.get('raw'):
+        if data.get('address'):
+            if data.get('peak'):
+                return data['raw']['address']['peak']
+    return ""
 
 
 
