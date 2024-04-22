@@ -60,6 +60,8 @@ def get_raw_geolocation_data_by_location(location: Location):
     data = requests.get(f"https://nominatim.openstreetmap.org/reverse?format=json&lat={l[0]}&lon={l[1]}").json()
     if data.get('raw'):
         return data['raw']
+    if data.get('address'):
+        return data['address']
     return None
 
 
