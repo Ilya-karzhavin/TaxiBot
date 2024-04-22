@@ -52,16 +52,15 @@ def get_raw_geolocation_data_by_location(location: Location):
     """
     Возвращает данные о местоположении
     """
+    import geocoder
 
-    result = dadata.geolocate(
-        "address", *location.as_tuple(), **DADATA_GEOLOCATOR_PARAMS
-    )
-    if result:
-        data = result[0]
-    else:
-        data = None
+    l = location.as_tuple()
 
-    return data["data"]
+
+    data = requests.get(f"https://nominatim.openstreetmap.org/reverse?format=json&lat={l[0]}&lon={l[1]}").json()
+    if data.get('raw'):
+        return data['raw']
+    return None
 
 
 def get_city_name_by_location(location: Location) -> str:
@@ -100,7 +99,7 @@ def get_address_by_location(location: Location) -> Address:
     place_id = int(data["kladr_id"])
 
     # Получаем название города, иногда она хранится в `city`, иногда в `town`
-    city_name = data.get("settlement") or data.get("city")
+    city_name = data.get("town") or data.get("city")
 
     # Если название города не определено, то поднимаем ошибку
     if not city_name:
