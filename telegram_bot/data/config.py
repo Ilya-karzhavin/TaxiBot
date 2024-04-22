@@ -58,8 +58,8 @@ ICONS_MEDIA_URL = MEDIA_URL / "telegram_icons"
 LOGGING_FILE_PATH = BASE_DIR / "data" / "logs" / "logging.log"
 
 
-REDIS_NAME = "77.222.55.165"
-REDIS_PORT = 6379
+REDIS_NAME = "77.222.37.151"
+REDIS_PORT = 6380
 REDIS_LOCATION_DB = 1
 REDIS_FSM_DB = 2
 # !!! 3 db number занят ядром, если находятся на одном сервере
