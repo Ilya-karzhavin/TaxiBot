@@ -41,7 +41,7 @@ async def get_autocompletion_inline_results(base_address, location=None):
 
 async def autocompletion_address(base_address, location=None):
     async with aiohttp.ClientSession() as session:
-        async with session.get("https://nominatim.openstreetmap.org/search.php?q={base_address}&format=jsonv2") as response:
+        async with session.get(f"https://nominatim.openstreetmap.org/search.php?q={base_address}&format=jsonv2") as response:
             result = await response.json()
     return result
 
