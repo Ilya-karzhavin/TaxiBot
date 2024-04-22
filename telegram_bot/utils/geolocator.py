@@ -40,7 +40,7 @@ async def get_autocompletion_inline_results(base_address, location=None):
 
 async def autocompletion_address(base_address, location=None):
     result = requests.get(f"https://nominatim.openstreetmap.org/search.php?q={base_address}&format=jsonv2").json()
-    return result.json
+    return result
 
 
 async def get_str_address_from_dadata_result(result):
