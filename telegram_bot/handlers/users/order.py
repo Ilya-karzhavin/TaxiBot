@@ -312,7 +312,10 @@ async def pick_payment_method(message, state):
         return
 
     await state.update_data(payment_method=PAYMENT_METHOD_CHOICES.get(message.text))
-    await set_step(chat_id=message.from_user.id, step_name="pick_phone_number")
+    user = await core.get_or_create_user(message.from_user)
+    phone_number = user.phone_number
+    await state.update_data(client_phone=phone_number)
+    await set_step(chat_id=message.from_user.id, step_name="pick_price")
 
 
 @dp.message_handler(
