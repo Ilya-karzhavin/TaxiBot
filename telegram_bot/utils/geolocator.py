@@ -54,7 +54,7 @@ async def get_str_address_from_dadata_result(result):
 
 
 async def get_sity_from_location(location: Location):
-    data = requests.get(f"https://nominatim.openstreetmap.org/reverse?format=json&lat={location.latitude}&lon={location.longitude}")
+    data = requests.get(f"https://nominatim.openstreetmap.org/reverse?format=json&lat={location.latitude}&lon={location.longitude}").json()
     pprint.pprint(data)
     if data.get('raw'):
         if data.get('address'):
