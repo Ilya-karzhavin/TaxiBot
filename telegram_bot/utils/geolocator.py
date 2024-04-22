@@ -57,7 +57,7 @@ async def get_str_address_from_dadata_result(result):
 
 async def get_sity_from_location(location: Location):
     async with aiohttp.ClientSession() as session:
-        async with session.get("https://nominatim.openstreetmap.org/reverse?format=json&lat={location.latitude}&lon={location.longitude}") as response:
+        async with session.get(f"https://nominatim.openstreetmap.org/reverse?format=json&lat={location.latitude}&lon={location.longitude}") as response:
             data = await response.json()
     pprint.pprint(data)
     if data.get('raw'):
