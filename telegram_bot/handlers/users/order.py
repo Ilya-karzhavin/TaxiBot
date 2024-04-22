@@ -324,12 +324,14 @@ async def pick_phone_number(message, state):
         phone_number = validate_phone_number(contact.phone_number)
     else:
         phone_number = validate_phone_number(message.text)
-
+    
     if not phone_number:
-        await message.answer(
-            t.WRONG_PHONE, reply_markup=await request_data_keyboard(buttons=["phone"])
-        )
-        return
+        # await message.answer(
+        #     t.WRONG_PHONE, reply_markup=await request_data_keyboard(buttons=["phone"])
+        # )
+        # return
+        user = await core.get_or_create_user(message.from_user)
+        phone_number = user.phone_number
 
     await state.update_data(client_phone=phone_number)
     await set_step(chat_id=message.from_user.id, step_name="pick_price")
