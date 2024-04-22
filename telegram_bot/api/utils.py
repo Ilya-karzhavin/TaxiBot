@@ -57,7 +57,7 @@ async def post_request(
         req = compose_data(data, files)
         # Отправляем асинхронный запрос
         response = await session.post(url, data=req)
-
+    print(f"{json_data=}")
     # Возвращаем ответ
     await check_response(response)
     return response
