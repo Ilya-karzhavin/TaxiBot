@@ -81,7 +81,7 @@ def get_closest_drivers_by_location(
         location__point__distance_lte=(base_location, D(m=radius)),
         driver__time_blocked_message_order__lt=time_now,
     )
-    filter_add = Q(driver__time_blocked_message_order__lt=time_now)
+    filter_add = Q(driver__time_blocked_message_order=None)
     if baby_chair:
         # Если нужно детское кресло, то добавляет это к запросу
         filter &= Q(driver__baby_chair=baby_chair)

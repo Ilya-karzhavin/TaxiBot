@@ -40,10 +40,15 @@ async def get_autocompletion_inline_results(base_address, location=None):
 
 
 async def autocompletion_address(base_address, location=None):
-    async with aiohttp.ClientSession() as session:
-        async with session.get(f"https://nominatim.openstreetmap.org/search.php?q={base_address}&format=jsonv2") as response:
-            result = await response.json()
-    return result
+    import time
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(f"https://nominatim.openstreetmap.org/search.php?q={base_address}&format=jsonv2") as response:
+                result = await response.json()
+        return result
+    except:
+        time.sleep(1)
+        return autocompletion_address(base_address=base_address, location=location)
 
 
 async def get_str_address_from_dadata_result(result):
@@ -56,15 +61,20 @@ async def get_str_address_from_dadata_result(result):
 
 
 async def get_sity_from_location(location: Location):
-    async with aiohttp.ClientSession() as session:
-        async with session.get(f"https://nominatim.openstreetmap.org/reverse?format=json&lat={location.latitude}&lon={location.longitude}") as response:
-            data = await response.json()
-    pprint.pprint(data)
-    if data.get('raw'):
-        if data.get('address'):
-            if data.get('peak'):
-                return data['raw']['address']['peak']
-    return ""
+    import time
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.get(f"https://nominatim.openstreetmap.org/reverse?format=json&lat={location.latitude}&lon={location.longitude}") as response:
+                data = await response.json()
+        pprint.pprint(data)
+        if data.get('raw'):
+            if data.get('address'):
+                if data.get('peak'):
+                    return data['raw']['address']['peak']
+        return ""
+    except:
+        time.sleep(1)
+        return get_sity_from_location(location=location)
 
 
 
