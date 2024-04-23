@@ -106,7 +106,7 @@ async def get_request(
     return response
 
 
-async def check_response(response: aiohttp.ClientResponse, json_data) -> bool:
+async def check_response(response: aiohttp.ClientResponse, json_data=None) -> bool:
     """
         Проверяет запрос, если вдруг статус плохой, выдает ошибку
     :param response:
